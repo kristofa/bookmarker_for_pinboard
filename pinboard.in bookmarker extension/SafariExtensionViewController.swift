@@ -17,6 +17,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     }()
 
     let pinboardApi = PinboardApi()
+    let apiTokenAccess = CommonKeychainAccess()
     let sharedUserDefaults = UserDefaults(suiteName: "pinboard.in_bookmarker")!
     
     @IBOutlet weak var statusTextField: NSTextField!
@@ -29,15 +30,36 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     @IBAction func bookmarkButtonPressed(_ sender: Any) {
         
-        NSLog("Bookmark button pressed")
+        NSLog("----- Bookmark button pressed -----")
         
-        if let apiToken = sharedUserDefaults.string(forKey: "apiToken") {
+        var apiTokenFromKeychain: String
+        let response = apiTokenAccess.getApiToken()
         
-            let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue)
+        switch(response) {
+            case .ErrorApiTokenItemNotFound:
+                let message = "Can't find API key in keychain. Set it using application."
+                NSLog(message)
+                self.updateStatusTextField(value: message)
+                return
+            case .ErrorUnexpectedApiTokenData:
+                let message = "Invalid data for API key in keychain. Manually remove it from keychain."
+                NSLog(message)
+                self.updateStatusTextField(value: message)
+                return
+            case .ErrorUnknown(let status):
+                let message = "Unknown error when getting API key from keychain. OSStatus: \(status)"
+                NSLog(message)
+                self.updateStatusTextField(value: message )
+                return
+            case .Success(let token):
+                NSLog("Getting API token from keychain successful")
+                apiTokenFromKeychain = token
+        }
         
-            pinboardApi.submit(apiToken: apiToken, pinboardUrl: pinboardUrl) {
-                (url, response) in
-            
+        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue)
+        
+        pinboardApi.submit(apiToken: apiTokenFromKeychain, pinboardUrl: pinboardUrl) {
+            (url, response) in
                 switch response {
                     case .Succes:
                         NSLog("Pinboard Request successful")
@@ -46,10 +68,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                         NSLog("Pinboard Request failed. Error: \(value)")
                         self.updateStatusTextField(value: "URL submission failed. Message: \(value).")
                 }
-            }
-        } else {
-            self.updateStatusTextField(value: "pinboard.in API token not configured.")
         }
+        
     }
     
     private func buttonStateToBool(value: NSControl.StateValue) -> Bool {
@@ -61,4 +81,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
             self.statusTextField.stringValue = value
         }
     }
+    
+  
 }

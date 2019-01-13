@@ -35,6 +35,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func popoverWillShow(in window: SFSafariWindow) {
         
         NSLog("------------- Will show! ----------------------")
+        
         window.getActiveTab {
             activeTab in activeTab?.getActivePage {
                 activePage in activePage?.getPropertiesWithCompletionHandler {

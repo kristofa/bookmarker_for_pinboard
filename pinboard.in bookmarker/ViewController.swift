@@ -19,12 +19,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
    
     @IBOutlet weak var privateButton: NSPopUpButton!
     
-    
     let sharedUserDefaults = UserDefaults(suiteName: "pinboard.in_bookmarker")!
+    let apiTokenAccess = KeychainApiTokenAccess()
     
     func controlTextDidChange(_ obj: Notification) {
-        sharedUserDefaults.set(apiTokenTextField.stringValue, forKey: "apiToken")
+        
+        let apiToken = apiTokenTextField.stringValue
+        apiTokenAccess.createOrUpdateToken(apiToken: apiToken)
+   
     }
+    
     
     @IBAction func readLaterButtonAction(_ sender: NSPopUpButton) {
         if let item = sender.selectedItem {
@@ -41,16 +45,21 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.appNameLabel.stringValue = "pinboard.in bookmarker";
         self.apiTokenTextField.delegate = self
-        if let existingApiToken = sharedUserDefaults.string(forKey: "apiToken") {
-            DispatchQueue.main.async {
-                self.apiTokenTextField.stringValue = existingApiToken
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.apiTokenTextField.stringValue = ""
-            }
+        
+        let apiTokenResponse = apiTokenAccess.getApiToken()
+        
+        switch (apiTokenResponse) {
+            case .Success(let token) :
+                DispatchQueue.main.async {
+                    self.apiTokenTextField.stringValue = token
+                }
+            default:
+                DispatchQueue.main.async {
+                    self.apiTokenTextField.stringValue = ""
+                }
         }
         
         if let readLater = sharedUserDefaults.string(forKey: "readLater") {
@@ -77,12 +86,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: "kristofa.Pinboard-Integration-Extension") { error in
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "kristofa.pinboard.in-bookmarker") { error in
             if let _ = error {
                 // Insert code to inform the user that something went wrong.
 
             }
         }
     }
-
+    
 }
