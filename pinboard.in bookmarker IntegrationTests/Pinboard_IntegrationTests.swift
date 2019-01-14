@@ -1,13 +1,5 @@
-//
-//  Pinboard_IntegrationTests.swift
-//  Pinboard IntegrationTests
-//
-//  Created by Kristof Adriaenssens on 30/12/2018.
-//  Copyright © 2018 Kristof Adriaenssens. All rights reserved.
-//
-
 import XCTest
-@testable import Pinboard_Integration
+@testable import pinboard_in_bookmarker
 
 class Pinboard_IntegrationTests: XCTestCase {
 

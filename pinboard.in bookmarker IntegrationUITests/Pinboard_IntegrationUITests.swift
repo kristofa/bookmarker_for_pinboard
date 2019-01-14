@@ -1,11 +1,3 @@
-//
-//  Pinboard_IntegrationUITests.swift
-//  Pinboard IntegrationUITests
-//
-//  Created by Kristof Adriaenssens on 30/12/2018.
-//  Copyright © 2018 Kristof Adriaenssens. All rights reserved.
-//
-
 import XCTest
 
 class Pinboard_IntegrationUITests: XCTestCase {

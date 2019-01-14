@@ -1,11 +1,3 @@
-//
-//  PinboardUrl.swift
-//  Pinboard Integration Extension
-//
-//  Created by Kristof Adriaenssens on 03/01/2019.
-//  Copyright © 2019 Kristof Adriaenssens. All rights reserved.
-//
-
 import Foundation
 
 struct PinboardUrl {
