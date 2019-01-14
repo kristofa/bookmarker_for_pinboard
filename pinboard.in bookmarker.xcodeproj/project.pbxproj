@@ -638,6 +638,7 @@
 				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker/pinboard.in bookmarker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LFASJ6UBQ7;
 				INFOPLIST_FILE = "$(SRCROOT)/pinboard.in bookmarker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -657,6 +658,7 @@
 				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker/pinboard.in bookmarker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LFASJ6UBQ7;
 				INFOPLIST_FILE = "$(SRCROOT)/pinboard.in bookmarker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
