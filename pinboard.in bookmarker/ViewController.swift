@@ -1,24 +1,39 @@
 import Cocoa
 import SafariServices.SFSafariApplication
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+class ViewController: NSViewController {
 
     @IBOutlet var appNameLabel: NSTextField!
-    
-    @IBOutlet weak var apiTokenTextField: NSSecureTextField!
     
     @IBOutlet weak var readLaterButton: NSPopUpButton!
    
     @IBOutlet weak var privateButton: NSPopUpButton!
     
+    @IBOutlet weak var apiTokenSetTextFieldCell: NSTextFieldCell!
+    
+    @IBOutlet weak var apiTokenTextField: NSTextFieldCell!
+    
+    @IBOutlet weak var apiTokenButton: NSButtonCell!
+    
+    
     let sharedUserDefaults = UserDefaults(suiteName: "pinboard.in_bookmarker")!
     let apiTokenAccess = KeychainApiTokenAccess()
     
-    func controlTextDidChange(_ obj: Notification) {
-        
+ 
+    @IBAction func apiTokenButtonAction(_ sender: NSButtonCell) {
         let apiToken = apiTokenTextField.stringValue
-        apiTokenAccess.createOrUpdateToken(apiToken: apiToken)
-   
+        let response = apiTokenAccess.createOrUpdateToken(apiToken: apiToken)
+        
+        switch (response) {
+            case .Success : updateTextAndColorOfApiTokenSetField(value: "Yes", color: NSColor.systemGreen)
+        case .ErrorCreatingOrUpdatingApiToken(_) : updateTextAndColorOfApiTokenSetField(value: "No", color: NSColor.red)
+        case .ErrorCreatingSecAccess(_) : updateTextAndColorOfApiTokenSetField(value: "No", color: NSColor.red)
+        case .ErrorCreatingTrustedApplicationsFailed(_, _) : updateTextAndColorOfApiTokenSetField(value: "No", color: NSColor.red)
+        }
+        
+        DispatchQueue.main.async {
+            self.apiTokenTextField.stringValue = ""
+        }
     }
     
     
@@ -39,19 +54,14 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
         
         self.appNameLabel.stringValue = "pinboard.in bookmarker";
-        self.apiTokenTextField.delegate = self
         
         let apiTokenResponse = apiTokenAccess.getApiToken()
         
         switch (apiTokenResponse) {
-            case .Success(let token) :
-                DispatchQueue.main.async {
-                    self.apiTokenTextField.stringValue = token
-                }
+            case .Success(_) :
+                updateTextAndColorOfApiTokenSetField(value: "Yes", color: NSColor.systemGreen)
             default:
-                DispatchQueue.main.async {
-                    self.apiTokenTextField.stringValue = ""
-                }
+                updateTextAndColorOfApiTokenSetField(value: "No", color: NSColor.red)
         }
         
         if let readLater = sharedUserDefaults.string(forKey: "readLater") {
@@ -83,6 +93,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 // Insert code to inform the user that something went wrong.
 
             }
+        }
+    }
+    
+    private func updateTextAndColorOfApiTokenSetField(value: String, color: NSColor) -> Void {
+        DispatchQueue.main.async {
+            self.apiTokenSetTextFieldCell.textColor = color
+            self.apiTokenSetTextFieldCell.stringValue = value
         }
     }
     
