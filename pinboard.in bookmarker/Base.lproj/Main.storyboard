@@ -163,7 +163,7 @@
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="eE1-Px-zYn" id="ohA-Y0-Agi">
-                                                <textField key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9">
+                                                <textField key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="pinboard_in_bookmarker" customModuleProvider="target">
                                                     <rect key="frame" x="125" y="58" width="250" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="n7i-dm-gfv"/>
@@ -289,7 +289,7 @@ DQ
                     <connections>
                         <outlet property="apiTokenButton" destination="zBa-hs-V7N" id="4rL-o2-rkx"/>
                         <outlet property="apiTokenSetTextFieldCell" destination="0EK-bP-lya" id="7Ms-xu-6k5"/>
-                        <outlet property="apiTokenTextField" destination="GEW-r7-dNQ" id="i0r-af-BfY"/>
+                        <outlet property="apiTokenTextField" destination="z0k-hi-PE9" id="pM4-Us-il2"/>
                         <outlet property="appNameLabel" destination="EB0-ac-UZR" id="SDO-j1-PQa"/>
                         <outlet property="privateButton" destination="C22-76-eZj" id="Y93-7H-bm0"/>
                         <outlet property="readLaterButton" destination="yie-kQ-G1L" id="WNw-Pf-BMf"/>

@@ -11,7 +11,7 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var apiTokenSetTextFieldCell: NSTextFieldCell!
     
-    @IBOutlet weak var apiTokenTextField: NSTextFieldCell!
+    @IBOutlet weak var apiTokenTextField: CutCopyPasteTextField!
     
     @IBOutlet weak var apiTokenButton: NSButtonCell!
     
