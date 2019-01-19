@@ -99,26 +99,26 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="pinboard_in_bookmarker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="590" height="359"/>
+                        <rect key="frame" x="0.0" y="0.0" width="590" height="374"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
-                                <rect key="frame" x="20" y="20" width="550" height="319"/>
+                                <rect key="frame" x="20" y="20" width="550" height="334"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWV-e2-WQh" userLabel="IconView">
-                                        <rect key="frame" x="211" y="191" width="128" height="128"/>
+                                        <rect key="frame" x="211" y="206" width="128" height="128"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="AppIcon" id="Hhb-TZ-Dhg"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
-                                        <rect key="frame" x="241" y="156" width="68" height="17"/>
+                                        <rect key="frame" x="241" y="171" width="68" height="17"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="App Name" id="S7v-7o-3vW">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="1" columnSpacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-wC-d8v">
-                                        <rect key="frame" x="0.0" y="39" width="550" height="99"/>
+                                    <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="3" columnSpacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-wC-d8v">
+                                        <rect key="frame" x="0.0" y="39" width="550" height="114"/>
                                         <rows>
                                             <gridRow id="YOd-5p-TC4"/>
                                             <gridRow id="Msd-oD-w0c"/>
@@ -133,7 +133,7 @@
                                         <gridCells>
                                             <gridCell row="YOd-5p-TC4" column="QY9-5N-tbb" id="wMg-Ed-RkW">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvw-no-2YG">
-                                                    <rect key="frame" x="-2" y="82" width="93" height="17"/>
+                                                    <rect key="frame" x="-2" y="86" width="93" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="API Token set?" id="rGg-KB-a36">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -143,8 +143,11 @@
                                             </gridCell>
                                             <gridCell row="YOd-5p-TC4" column="eE1-Px-zYn" id="m9S-34-vLZ">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBf-JC-I4o">
-                                                    <rect key="frame" x="123" y="82" width="37" height="17"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="0EK-bP-lya">
+                                                    <rect key="frame" x="125" y="86" width="254" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="XyZ-OD-7bJ"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" title="Label" id="0EK-bP-lya">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -154,7 +157,7 @@
                                             <gridCell row="YOd-5p-TC4" column="AQf-gc-PFg" id="f2N-O7-OnF"/>
                                             <gridCell row="Msd-oD-w0c" column="QY9-5N-tbb" id="228-aq-GCn">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-5s-hNA">
-                                                    <rect key="frame" x="-2" y="61" width="64" height="17"/>
+                                                    <rect key="frame" x="-2" y="51" width="64" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="API Token" id="gMm-Uu-W0Z">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -164,7 +167,7 @@
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="eE1-Px-zYn" id="ohA-Y0-Agi">
                                                 <textField key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="pinboard_in_bookmarker" customModuleProvider="target">
-                                                    <rect key="frame" x="125" y="58" width="250" height="22"/>
+                                                    <rect key="frame" x="127" y="48" width="250" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="n7i-dm-gfv"/>
                                                     </constraints>
@@ -177,7 +180,7 @@
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="AQf-gc-PFg" id="upV-V0-chU">
                                                 <button key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qxv-rg-ABv">
-                                                    <rect key="frame" x="378" y="51" width="148" height="32"/>
+                                                    <rect key="frame" x="382" y="41" width="148" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Update API Token" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zBa-hs-V7N">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -189,7 +192,7 @@
                                             </gridCell>
                                             <gridCell row="qmv-ID-iZC" column="QY9-5N-tbb" id="yuy-gR-MCz">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFr-vF-BUG">
-                                                    <rect key="frame" x="-2" y="38" width="128" height="17"/>
+                                                    <rect key="frame" x="-2" y="26" width="128" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Default &quot;Read Later&quot;" id="nuo-Zc-P7k">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -199,7 +202,7 @@
                                             </gridCell>
                                             <gridCell row="qmv-ID-iZC" column="eE1-Px-zYn" id="JuH-QA-b0f">
                                                 <popUpButton key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yie-kQ-G1L">
-                                                    <rect key="frame" x="123" y="33" width="60" height="25"/>
+                                                    <rect key="frame" x="125" y="21" width="60" height="25"/>
                                                     <popUpButtonCell key="cell" type="push" title="Yes" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" continuous="YES" state="on" borderStyle="border" inset="2" selectedItem="Vay-GT-J0h" id="n19-XD-ger" userLabel="cell">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="menu"/>
@@ -222,7 +225,7 @@
                                             <gridCell row="qmv-ID-iZC" column="AQf-gc-PFg" id="hq4-tK-tUa"/>
                                             <gridCell row="Ih3-mv-O0U" column="QY9-5N-tbb" id="fw5-hG-yBv">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CrS-vC-exy">
-                                                    <rect key="frame" x="-2" y="9" width="105" height="17"/>
+                                                    <rect key="frame" x="-2" y="2" width="105" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Default &quot;Private&quot;" id="qgY-SP-IEf">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -232,7 +235,7 @@
                                             </gridCell>
                                             <gridCell row="Ih3-mv-O0U" column="eE1-Px-zYn" id="gyp-Rr-WX4">
                                                 <popUpButton key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C22-76-eZj">
-                                                    <rect key="frame" x="123" y="4" width="60" height="25"/>
+                                                    <rect key="frame" x="125" y="-3" width="60" height="25"/>
                                                     <popUpButtonCell key="cell" type="push" title="No" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="7eU-A6-8pt" id="k2h-vP-nzi">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="menu"/>
