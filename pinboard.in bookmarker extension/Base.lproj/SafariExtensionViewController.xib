@@ -134,7 +134,7 @@
                         <constraint firstAttribute="height" constant="17" id="FNk-hZ-rV3"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="302" id="hpr-Zy-WAd"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Status message" id="Obt-BF-81b">
+                    <textFieldCell key="cell" title="Status message" id="Obt-BF-81b">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

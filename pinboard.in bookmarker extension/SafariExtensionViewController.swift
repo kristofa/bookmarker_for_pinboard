@@ -22,26 +22,21 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     @IBAction func bookmarkButtonPressed(_ sender: Any) {
         
-        NSLog("----- Bookmark button pressed -----")
-        
         var apiTokenFromKeychain: String
         let response = apiTokenAccess.getApiToken()
         
         switch(response) {
             case .ErrorApiTokenItemNotFound:
-                let message = "Can't find API key in keychain. Set it using application."
-                NSLog(message)
-                self.updateStatusTextField(value: message)
+                let message = "Can't find API token in keychain. Set it using application."
+                self.updateStatusTextFieldFailure(message: message)
                 return
             case .ErrorUnexpectedApiTokenData:
                 let message = "Invalid data for API key in keychain. Manually remove it from keychain."
-                NSLog(message)
-                self.updateStatusTextField(value: message)
+                self.updateStatusTextFieldFailure(message: message)
                 return
             case .ErrorUnknown(let status):
                 let message = "Unknown error when getting API key from keychain. OSStatus: \(status)"
-                NSLog(message)
-                self.updateStatusTextField(value: message )
+                self.updateStatusTextFieldFailure(message: message )
                 return
             case .Success(let token):
                 NSLog("Getting API token from keychain successful")
@@ -55,10 +50,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                 switch response {
                     case .Succes:
                         NSLog("Pinboard Request successful")
-                        self.updateStatusTextField(value: "URL successfully submitted to Pinboard.")
+                        self.updateStatusTextFieldSuccess(message: "URL successfully submitted to Pinboard.")
                     case .Error(let value):
                         NSLog("Pinboard Request failed. Error: \(value)")
-                        self.updateStatusTextField(value: "URL submission failed. Message: \(value).")
+                        self.updateStatusTextFieldFailure(message: "URL submission failed. Message: \(value).")
                 }
         }
         
@@ -68,8 +63,17 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
         return value == NSControl.StateValue.on ? true : false
     }
     
-    private func updateStatusTextField(value: String) -> Void {
+    private func updateStatusTextFieldSuccess(message: String) -> Void {
+        updateTextAndColorOfStatusField(value: message, color: NSColor.systemGreen)
+    }
+    
+    private func updateStatusTextFieldFailure(message: String) -> Void {
+        updateTextAndColorOfStatusField(value: message, color: NSColor.systemRed)
+    }
+    
+    private func updateTextAndColorOfStatusField(value: String, color: NSColor) -> Void {
         DispatchQueue.main.async {
+            self.statusTextField.textColor = color
             self.statusTextField.stringValue = value
         }
     }
