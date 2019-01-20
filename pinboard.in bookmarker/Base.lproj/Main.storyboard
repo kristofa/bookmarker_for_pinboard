@@ -174,7 +174,7 @@
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="eE1-Px-zYn" id="ohA-Y0-Agi">
-                                                <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="pinboard_in_bookmarker" customModuleProvider="target">
+                                                <textField key="contentView" toolTip="You pinboard API token that can be found in settings -&gt; password at https://pinboard.in" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="pinboard_in_bookmarker" customModuleProvider="target">
                                                     <rect key="frame" x="127" y="71" width="250" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="GEW-r7-dNQ">
                                                         <font key="font" usesAppearanceFont="YES"/>
@@ -184,7 +184,7 @@
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="AQf-gc-PFg" id="upV-V0-chU">
-                                                <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qxv-rg-ABv">
+                                                <button key="contentView" toolTip="Will set or update the existing API token in your keychain." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qxv-rg-ABv">
                                                     <rect key="frame" x="382" y="64" width="148" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Update API Token" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zBa-hs-V7N">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -208,6 +208,7 @@
                                             <gridCell row="qmv-ID-iZC" column="eE1-Px-zYn" id="JuH-QA-b0f">
                                                 <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yie-kQ-G1L">
                                                     <rect key="frame" x="125" y="44" width="60" height="25"/>
+                                                    <string key="toolTip">Default value for 'Read later' when submitting a bookmark. If 'Yes' the 'Read Later' checkbox will be checked when adding a bookmark.</string>
                                                     <popUpButtonCell key="cell" type="push" title="Yes" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" continuous="YES" state="on" borderStyle="border" inset="2" selectedItem="Vay-GT-J0h" id="n19-XD-ger" userLabel="cell">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="menu"/>
@@ -239,7 +240,7 @@
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="Ih3-mv-O0U" column="eE1-Px-zYn" id="gyp-Rr-WX4">
-                                                <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C22-76-eZj">
+                                                <popUpButton key="contentView" toolTip="Default value for 'Private' when submitting a bookmark. If 'Yes' the 'Private' checkbox will be checked when adding a bookmark." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C22-76-eZj">
                                                     <rect key="frame" x="125" y="8" width="60" height="26"/>
                                                     <popUpButtonCell key="cell" type="push" title="No" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="7eU-A6-8pt" id="k2h-vP-nzi">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
