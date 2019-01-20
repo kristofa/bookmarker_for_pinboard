@@ -1,4 +1,4 @@
-# pinboard.in_bookmarker
+# pinboard.in bookmarker
 
 Safari App Extension that allows you to submit webpages to your [pinboard](https://pinboard.in/) account.
 
