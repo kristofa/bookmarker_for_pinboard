@@ -600,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker extension/pinboard.in bookmarker extension.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LFASJ6UBQ7;
 				INFOPLIST_FILE = "pinboard.in bookmarker extension/Info.plist";
@@ -610,6 +611,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.pinboard.in-bookmarker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -619,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker extension/pinboard.in bookmarker extension.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LFASJ6UBQ7;
 				INFOPLIST_FILE = "pinboard.in bookmarker extension/Info.plist";
@@ -629,6 +632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.pinboard.in-bookmarker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
