@@ -33,18 +33,21 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 activePage in activePage?.getPropertiesWithCompletionHandler {
                     pageProperties in
                     if let title = pageProperties?.title, let url = pageProperties?.url {
-//                        // Move to a background thread to do some long running work
-//                        DispatchQueue.global(qos: .userInitiated).async {
-//                            // Do long running task here
-                            // Bounce back to the main thread to update the UI
-                            DispatchQueue.main.async {
-                                SafariExtensionViewController.shared.urlTextField.stringValue = url.absoluteString
-                                SafariExtensionViewController.shared.titleTextField.stringValue = title
-                                SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
-                                SafariExtensionViewController.shared.tagsTextField.stringValue = ""
-                                SafariExtensionViewController.shared.statusTextField.stringValue = ""
-                            }
-//                        }
+                        DispatchQueue.main.async {
+                            SafariExtensionViewController.shared.urlTextField.stringValue = url.absoluteString
+                            SafariExtensionViewController.shared.titleTextField.stringValue = title
+                            SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
+                            SafariExtensionViewController.shared.tagsTextField.stringValue = ""
+                            SafariExtensionViewController.shared.statusTextField.stringValue = ""
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            SafariExtensionViewController.shared.urlTextField.stringValue = ""
+                            SafariExtensionViewController.shared.titleTextField.stringValue = ""
+                            SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
+                            SafariExtensionViewController.shared.tagsTextField.stringValue = ""
+                            SafariExtensionViewController.shared.statusTextField.stringValue = ""
+                        }
                     }
                 }
             }
