@@ -52,8 +52,8 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Kristof Adriaenssens. All rights reserved.</string>
+	<string>Copyright © 2019 Kristof Adriaenssens. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>Allows adding URL's to pinboard.in</string>
+	<string>Save web links to pinboard.in</string>
 </dict>
 </plist>
