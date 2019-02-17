@@ -2,7 +2,7 @@ import Foundation
 
 class KeychainApiTokenAccess : CommonKeychainAccess {
     
-    private static let safariExtensionSuffix = "/pinboard.in bookmarker Extension.appex"
+    private static let safariExtensionSuffix = "/bookmarker for pinboard Extension.appex"
     
     
     func createOrUpdateToken(apiToken: String) -> ApiTokenCreateOrUpdateResponse {

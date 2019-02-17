@@ -2,7 +2,7 @@ import Foundation
 
 class CommonKeychainAccess {
     
-    static let serviceName = "pinboard.in bookmarker"
+    static let serviceName = "bookmarker for pinboard"
     
     func getApiToken() -> ApiTokenGetResponse {
         let apiTokenQuery = query()
