@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		6D020C2221EE725D00859606 /* CutCopyPasteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D020C2121EE725D00859606 /* CutCopyPasteTextField.swift */; };
 		6D14370621DE3E340025FE25 /* PinboardUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14370521DE3E340025FE25 /* PinboardUrl.swift */; };
-		6D59F41421D8FF5700143454 /* pinboard.in bookmarker.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41321D8FF5700143454 /* pinboard.in bookmarker.entitlements */; };
+		6D59F41421D8FF5700143454 /* bookmarker for pinboard.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41321D8FF5700143454 /* bookmarker for pinboard.entitlements */; };
 		6D59F41621D8FF5700143454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F41521D8FF5700143454 /* AppDelegate.swift */; };
 		6D59F41921D8FF5700143454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41721D8FF5700143454 /* Main.storyboard */; };
 		6D59F41B21D8FF5700143454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F41A21D8FF5700143454 /* ViewController.swift */; };
 		6D59F41D21D8FF5900143454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41C21D8FF5900143454 /* Assets.xcassets */; };
 		6D59F42821D8FF5900143454 /* Pinboard_IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F42721D8FF5900143454 /* Pinboard_IntegrationTests.swift */; };
 		6D59F43321D8FF5900143454 /* Pinboard_IntegrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F43221D8FF5900143454 /* Pinboard_IntegrationUITests.swift */; };
-		6D59F43A21D8FF5900143454 /* pinboard.in bookmarker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D59F43921D8FF5900143454 /* pinboard.in bookmarker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6D59F43A21D8FF5900143454 /* bookmarker for pinboard Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6D59F43F21D8FF5900143454 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59F43E21D8FF5900143454 /* Cocoa.framework */; };
 		6D59F44221D8FF5900143454 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F44121D8FF5900143454 /* SafariExtensionHandler.swift */; };
 		6D59F44421D8FF5900143454 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F44321D8FF5900143454 /* SafariExtensionViewController.swift */; };
@@ -64,7 +64,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				6D59F43A21D8FF5900143454 /* pinboard.in bookmarker Extension.appex in Embed App Extensions */,
+				6D59F43A21D8FF5900143454 /* bookmarker for pinboard Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,27 +74,27 @@
 /* Begin PBXFileReference section */
 		6D020C2121EE725D00859606 /* CutCopyPasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutCopyPasteTextField.swift; sourceTree = "<group>"; };
 		6D14370521DE3E340025FE25 /* PinboardUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardUrl.swift; sourceTree = "<group>"; };
-		6D59F41021D8FF5700143454 /* pinboard.in bookmarker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pinboard.in bookmarker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D59F41321D8FF5700143454 /* pinboard.in bookmarker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "pinboard.in bookmarker.entitlements"; sourceTree = "<group>"; };
+		6D59F41021D8FF5700143454 /* bookmarker for pinboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bookmarker for pinboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D59F41321D8FF5700143454 /* bookmarker for pinboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bookmarker for pinboard.entitlements"; sourceTree = "<group>"; };
 		6D59F41521D8FF5700143454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D59F41821D8FF5700143454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D59F41A21D8FF5700143454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D59F41C21D8FF5900143454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D59F41E21D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D59F42321D8FF5900143454 /* pinboard.in bookmarkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pinboard.in bookmarkerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D59F42321D8FF5900143454 /* bookmarker for pinboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookmarker for pinboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D59F42721D8FF5900143454 /* Pinboard_IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinboard_IntegrationTests.swift; sourceTree = "<group>"; };
 		6D59F42921D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D59F42E21D8FF5900143454 /* pinboard.in bookmarkerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pinboard.in bookmarkerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D59F42E21D8FF5900143454 /* bookmarker for pinboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookmarker for pinboardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D59F43221D8FF5900143454 /* Pinboard_IntegrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinboard_IntegrationUITests.swift; sourceTree = "<group>"; };
 		6D59F43421D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D59F43921D8FF5900143454 /* pinboard.in bookmarker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "pinboard.in bookmarker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "bookmarker for pinboard Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D59F43E21D8FF5900143454 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6D59F44121D8FF5900143454 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		6D59F44321D8FF5900143454 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		6D59F44621D8FF5900143454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		6D59F44821D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D59F44B21D8FF5900143454 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
-		6D59F44D21D8FF5900143454 /* pinboard.in bookmarker extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "pinboard.in bookmarker extension.entitlements"; sourceTree = "<group>"; };
+		6D59F44D21D8FF5900143454 /* bookmarker for pinboard extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bookmarker for pinboard extension.entitlements"; sourceTree = "<group>"; };
 		6D9F4A3721EB4CB5003A7BC7 /* ApiTokenCreateOrUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTokenCreateOrUpdateResponse.swift; sourceTree = "<group>"; };
 		6D9F4A3921EB530B003A7BC7 /* KeychainApiTokenAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainApiTokenAccess.swift; sourceTree = "<group>"; };
 		6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonKeychainAccess.swift; sourceTree = "<group>"; };
@@ -140,10 +140,10 @@
 		6D59F40721D8FF5700143454 = {
 			isa = PBXGroup;
 			children = (
-				6D59F41221D8FF5700143454 /* pinboard.in bookmarker */,
-				6D59F42621D8FF5900143454 /* pinboard.in bookmarker IntegrationTests */,
-				6D59F43121D8FF5900143454 /* pinboard.in bookmarker IntegrationUITests */,
-				6D59F44021D8FF5900143454 /* pinboard.in bookmarker extension */,
+				6D59F41221D8FF5700143454 /* bookmarker for pinboard */,
+				6D59F42621D8FF5900143454 /* bookmarker for pinboard IntegrationTests */,
+				6D59F43121D8FF5900143454 /* bookmarker for pinboard IntegrationUITests */,
+				6D59F44021D8FF5900143454 /* bookmarker for pinboard extension */,
 				6D59F43D21D8FF5900143454 /* Frameworks */,
 				6D59F41121D8FF5700143454 /* Products */,
 			);
@@ -152,19 +152,19 @@
 		6D59F41121D8FF5700143454 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D59F41021D8FF5700143454 /* pinboard.in bookmarker.app */,
-				6D59F42321D8FF5900143454 /* pinboard.in bookmarkerTests.xctest */,
-				6D59F42E21D8FF5900143454 /* pinboard.in bookmarkerUITests.xctest */,
-				6D59F43921D8FF5900143454 /* pinboard.in bookmarker Extension.appex */,
+				6D59F41021D8FF5700143454 /* bookmarker for pinboard.app */,
+				6D59F42321D8FF5900143454 /* bookmarker for pinboardTests.xctest */,
+				6D59F42E21D8FF5900143454 /* bookmarker for pinboardUITests.xctest */,
+				6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D59F41221D8FF5700143454 /* pinboard.in bookmarker */ = {
+		6D59F41221D8FF5700143454 /* bookmarker for pinboard */ = {
 			isa = PBXGroup;
 			children = (
 				6D9F4A4721EB8CA4003A7BC7 /* ApiTokenGetResponse.swift */,
-				6D59F41321D8FF5700143454 /* pinboard.in bookmarker.entitlements */,
+				6D59F41321D8FF5700143454 /* bookmarker for pinboard.entitlements */,
 				6D9F4A3921EB530B003A7BC7 /* KeychainApiTokenAccess.swift */,
 				6D9F4A3721EB4CB5003A7BC7 /* ApiTokenCreateOrUpdateResponse.swift */,
 				6D59F41521D8FF5700143454 /* AppDelegate.swift */,
@@ -175,25 +175,25 @@
 				6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */,
 				6D020C2121EE725D00859606 /* CutCopyPasteTextField.swift */,
 			);
-			path = "pinboard.in bookmarker";
+			path = "bookmarker for pinboard";
 			sourceTree = "<group>";
 		};
-		6D59F42621D8FF5900143454 /* pinboard.in bookmarker IntegrationTests */ = {
+		6D59F42621D8FF5900143454 /* bookmarker for pinboard IntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
 				6D59F42721D8FF5900143454 /* Pinboard_IntegrationTests.swift */,
 				6D59F42921D8FF5900143454 /* Info.plist */,
 			);
-			path = "pinboard.in bookmarker IntegrationTests";
+			path = "bookmarker for pinboard IntegrationTests";
 			sourceTree = "<group>";
 		};
-		6D59F43121D8FF5900143454 /* pinboard.in bookmarker IntegrationUITests */ = {
+		6D59F43121D8FF5900143454 /* bookmarker for pinboard IntegrationUITests */ = {
 			isa = PBXGroup;
 			children = (
 				6D59F43221D8FF5900143454 /* Pinboard_IntegrationUITests.swift */,
 				6D59F43421D8FF5900143454 /* Info.plist */,
 			);
-			path = "pinboard.in bookmarker IntegrationUITests";
+			path = "bookmarker for pinboard IntegrationUITests";
 			sourceTree = "<group>";
 		};
 		6D59F43D21D8FF5900143454 /* Frameworks */ = {
@@ -204,7 +204,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6D59F44021D8FF5900143454 /* pinboard.in bookmarker extension */ = {
+		6D59F44021D8FF5900143454 /* bookmarker for pinboard extension */ = {
 			isa = PBXGroup;
 			children = (
 				6DC8FCED21E20B9300997B80 /* pinboard_toolbar_icon.pdf */,
@@ -213,20 +213,20 @@
 				6D59F44521D8FF5900143454 /* SafariExtensionViewController.xib */,
 				6D59F44821D8FF5900143454 /* Info.plist */,
 				6D59F44B21D8FF5900143454 /* ToolbarItemIcon.pdf */,
-				6D59F44D21D8FF5900143454 /* pinboard.in bookmarker extension.entitlements */,
+				6D59F44D21D8FF5900143454 /* bookmarker for pinboard extension.entitlements */,
 				6DEF337821DCD33800123E74 /* PinboardApi.swift */,
 				6DEF337C21DCE01D00123E74 /* PinboardApiResponse.swift */,
 				6D14370521DE3E340025FE25 /* PinboardUrl.swift */,
 			);
-			path = "pinboard.in bookmarker extension";
+			path = "bookmarker for pinboard extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D59F40F21D8FF5700143454 /* pinboard.in bookmarker */ = {
+		6D59F40F21D8FF5700143454 /* bookmarker for pinboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D59F45421D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarker" */;
+			buildConfigurationList = 6D59F45421D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboard" */;
 			buildPhases = (
 				6D59F40C21D8FF5700143454 /* Sources */,
 				6D59F40D21D8FF5700143454 /* Frameworks */,
@@ -238,14 +238,14 @@
 			dependencies = (
 				6D59F43C21D8FF5900143454 /* PBXTargetDependency */,
 			);
-			name = "pinboard.in bookmarker";
+			name = "bookmarker for pinboard";
 			productName = "Pinboard Integration";
-			productReference = 6D59F41021D8FF5700143454 /* pinboard.in bookmarker.app */;
+			productReference = 6D59F41021D8FF5700143454 /* bookmarker for pinboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6D59F42221D8FF5900143454 /* pinboard.in bookmarkerTests */ = {
+		6D59F42221D8FF5900143454 /* bookmarker for pinboardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D59F45721D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarkerTests" */;
+			buildConfigurationList = 6D59F45721D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardTests" */;
 			buildPhases = (
 				6D59F41F21D8FF5900143454 /* Sources */,
 				6D59F42021D8FF5900143454 /* Frameworks */,
@@ -256,14 +256,14 @@
 			dependencies = (
 				6D59F42521D8FF5900143454 /* PBXTargetDependency */,
 			);
-			name = "pinboard.in bookmarkerTests";
+			name = "bookmarker for pinboardTests";
 			productName = "Pinboard IntegrationTests";
-			productReference = 6D59F42321D8FF5900143454 /* pinboard.in bookmarkerTests.xctest */;
+			productReference = 6D59F42321D8FF5900143454 /* bookmarker for pinboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6D59F42D21D8FF5900143454 /* pinboard.in bookmarkerUITests */ = {
+		6D59F42D21D8FF5900143454 /* bookmarker for pinboardUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D59F45A21D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarkerUITests" */;
+			buildConfigurationList = 6D59F45A21D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardUITests" */;
 			buildPhases = (
 				6D59F42A21D8FF5900143454 /* Sources */,
 				6D59F42B21D8FF5900143454 /* Frameworks */,
@@ -274,14 +274,14 @@
 			dependencies = (
 				6D59F43021D8FF5900143454 /* PBXTargetDependency */,
 			);
-			name = "pinboard.in bookmarkerUITests";
+			name = "bookmarker for pinboardUITests";
 			productName = "Pinboard IntegrationUITests";
-			productReference = 6D59F42E21D8FF5900143454 /* pinboard.in bookmarkerUITests.xctest */;
+			productReference = 6D59F42E21D8FF5900143454 /* bookmarker for pinboardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		6D59F43821D8FF5900143454 /* pinboard.in bookmarker Extension */ = {
+		6D59F43821D8FF5900143454 /* bookmarker for pinboard Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D59F45021D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarker Extension" */;
+			buildConfigurationList = 6D59F45021D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboard Extension" */;
 			buildPhases = (
 				6D59F43521D8FF5900143454 /* Sources */,
 				6D59F43621D8FF5900143454 /* Frameworks */,
@@ -291,9 +291,9 @@
 			);
 			dependencies = (
 			);
-			name = "pinboard.in bookmarker Extension";
+			name = "bookmarker for pinboard Extension";
 			productName = "Pinboard Integration Extension";
-			productReference = 6D59F43921D8FF5900143454 /* pinboard.in bookmarker Extension.appex */;
+			productReference = 6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -341,7 +341,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D59F40B21D8FF5700143454 /* Build configuration list for PBXProject "pinboard.in bookmarker" */;
+			buildConfigurationList = 6D59F40B21D8FF5700143454 /* Build configuration list for PBXProject "bookmarker for pinboard" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -354,10 +354,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D59F40F21D8FF5700143454 /* pinboard.in bookmarker */,
-				6D59F42221D8FF5900143454 /* pinboard.in bookmarkerTests */,
-				6D59F42D21D8FF5900143454 /* pinboard.in bookmarkerUITests */,
-				6D59F43821D8FF5900143454 /* pinboard.in bookmarker Extension */,
+				6D59F40F21D8FF5700143454 /* bookmarker for pinboard */,
+				6D59F42221D8FF5900143454 /* bookmarker for pinboardTests */,
+				6D59F42D21D8FF5900143454 /* bookmarker for pinboardUITests */,
+				6D59F43821D8FF5900143454 /* bookmarker for pinboard Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -367,7 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D59F41421D8FF5700143454 /* pinboard.in bookmarker.entitlements in Resources */,
+				6D59F41421D8FF5700143454 /* bookmarker for pinboard.entitlements in Resources */,
 				6D59F41D21D8FF5900143454 /* Assets.xcassets in Resources */,
 				6D59F41921D8FF5700143454 /* Main.storyboard in Resources */,
 			);
@@ -449,17 +449,17 @@
 /* Begin PBXTargetDependency section */
 		6D59F42521D8FF5900143454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D59F40F21D8FF5700143454 /* pinboard.in bookmarker */;
+			target = 6D59F40F21D8FF5700143454 /* bookmarker for pinboard */;
 			targetProxy = 6D59F42421D8FF5900143454 /* PBXContainerItemProxy */;
 		};
 		6D59F43021D8FF5900143454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D59F40F21D8FF5700143454 /* pinboard.in bookmarker */;
+			target = 6D59F40F21D8FF5700143454 /* bookmarker for pinboard */;
 			targetProxy = 6D59F42F21D8FF5900143454 /* PBXContainerItemProxy */;
 		};
 		6D59F43C21D8FF5900143454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D59F43821D8FF5900143454 /* pinboard.in bookmarker Extension */;
+			target = 6D59F43821D8FF5900143454 /* bookmarker for pinboard Extension */;
 			targetProxy = 6D59F43B21D8FF5900143454 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -602,11 +602,11 @@
 		6D59F45121D8FF5900143454 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker extension/pinboard.in bookmarker extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "bookmarker for pinboard extension/bookmarker for pinboard extension.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LFASJ6UBQ7;
-				INFOPLIST_FILE = "pinboard.in bookmarker extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/bookmarker for pinboard extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -623,11 +623,11 @@
 		6D59F45221D8FF5900143454 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker extension/pinboard.in bookmarker extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "bookmarker for pinboard extension/bookmarker for pinboard extension.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LFASJ6UBQ7;
-				INFOPLIST_FILE = "pinboard.in bookmarker extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/bookmarker for pinboard extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -646,12 +646,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker/pinboard.in bookmarker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "bookmarker for pinboard/bookmarker for pinboard.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LFASJ6UBQ7;
-				INFOPLIST_FILE = "$(SRCROOT)/pinboard.in bookmarker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/bookmarker for pinboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -668,12 +668,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "pinboard.in bookmarker/pinboard.in bookmarker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "bookmarker for pinboard/bookmarker for pinboard.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LFASJ6UBQ7;
-				INFOPLIST_FILE = "$(SRCROOT)/pinboard.in bookmarker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/bookmarker for pinboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -701,7 +701,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.Pinboard-IntegrationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinboard.in bookmarker.app/Contents/MacOS/pinboard.in bookmarker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookmarker for pinboard.app/Contents/MacOS/bookmarker for pinboard";
 			};
 			name = Debug;
 		};
@@ -721,7 +721,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.Pinboard-IntegrationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinboard.in bookmarker.app/Contents/MacOS/pinboard.in bookmarker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookmarker for pinboard.app/Contents/MacOS/bookmarker for pinboard";
 			};
 			name = Release;
 		};
@@ -766,7 +766,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D59F40B21D8FF5700143454 /* Build configuration list for PBXProject "pinboard.in bookmarker" */ = {
+		6D59F40B21D8FF5700143454 /* Build configuration list for PBXProject "bookmarker for pinboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D59F44E21D8FF5900143454 /* Debug */,
@@ -775,7 +775,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D59F45021D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarker Extension" */ = {
+		6D59F45021D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboard Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D59F45121D8FF5900143454 /* Debug */,
@@ -784,7 +784,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D59F45421D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarker" */ = {
+		6D59F45421D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D59F45521D8FF5900143454 /* Debug */,
@@ -793,7 +793,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D59F45721D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarkerTests" */ = {
+		6D59F45721D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D59F45821D8FF5900143454 /* Debug */,
@@ -802,7 +802,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D59F45A21D8FF5900143454 /* Build configuration list for PBXNativeTarget "pinboard.in bookmarkerUITests" */ = {
+		6D59F45A21D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D59F45B21D8FF5900143454 /* Debug */,
