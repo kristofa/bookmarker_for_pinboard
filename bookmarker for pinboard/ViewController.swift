@@ -16,7 +16,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var apiTokenButton: NSButtonCell!
     
     
-    let sharedUserDefaults = UserDefaults(suiteName: "pinboard.in_bookmarker")!
+    let sharedUserDefaults = UserDefaults(suiteName: "bookmarker_for_pinboard")!
     let apiTokenAccess = KeychainApiTokenAccess()
  
     @IBAction func apiTokenButtonAction(_ sender: NSButtonCell) {
@@ -52,8 +52,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.appNameLabel.stringValue = "pinboard.in bookmarker";
         
         let apiTokenResponse = apiTokenAccess.getApiToken()
         

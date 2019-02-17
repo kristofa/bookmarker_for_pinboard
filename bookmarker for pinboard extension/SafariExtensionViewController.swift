@@ -10,7 +10,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
     let pinboardApi = PinboardApi()
     let apiTokenAccess = CommonKeychainAccess()
-    let sharedUserDefaults = UserDefaults(suiteName: "pinboard.in_bookmarker")!
     
     @IBOutlet weak var statusTextField: NSTextField!
     @IBOutlet weak var descriptionTextField: NSTextField!
