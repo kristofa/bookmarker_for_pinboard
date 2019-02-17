@@ -1,6 +1,6 @@
 # bookmarker for pinboard
 
-![bookmarker for pinboard logo](https://raw.github.com/wiki/kristofa/pinboard.in_bookmarker/pinboard.in_bookmarker_logo.png)
+![bookmarker for pinboard logo](https://raw.github.com/wiki/kristofa/bookmarker_for_pinboard/logo.png)
 
 Safari App Extension that allows you to submit webpages to your [pinboard](https://pinboard.in/) account.
 
