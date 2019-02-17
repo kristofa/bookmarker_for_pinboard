@@ -172,7 +172,7 @@
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="eE1-Px-zYn" id="ohA-Y0-Agi">
-                                                <textField key="contentView" toolTip="You pinboard API token that can be found in settings -&gt; password at https://pinboard.in" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="bookmarker_for_pinboard" customModuleProvider="target">
+                                                <textField key="contentView" toolTip="Your pinboard API token can be found in settings -&gt; password at https://pinboard.in" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="bookmarker_for_pinboard" customModuleProvider="target">
                                                     <rect key="frame" x="133" y="70" width="250" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="GEW-r7-dNQ">
                                                         <font key="font" usesAppearanceFont="YES"/>
