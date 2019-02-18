@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pinboard Integration Extension.xcscheme_^#shared#^_</key>
+		<key>bookmarker for pinboard extension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pinboard Integration.xcscheme_^#shared#^_</key>
+		<key>bookmarker for pinboard.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
