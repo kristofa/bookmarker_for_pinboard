@@ -52,7 +52,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                         self.updateStatusTextFieldSuccess(message: "URL successfully submitted to Pinboard.")
                     case .Error(let value):
                         NSLog("Pinboard Request failed. Error: \(value)")
-                        self.updateStatusTextFieldFailure(message: "URL submission failed. Message: \(value).")
+                        self.updateStatusTextFieldFailure(message: value)
                 }
         }
         
