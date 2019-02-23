@@ -99,18 +99,18 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="bookmarker_for_pinboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="590" height="374"/>
+                        <rect key="frame" x="0.0" y="0.0" width="621" height="402"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
-                                <rect key="frame" x="20" y="6" width="550" height="348"/>
+                                <rect key="frame" x="20" y="20" width="581" height="362"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWV-e2-WQh" userLabel="IconView">
-                                        <rect key="frame" x="211" y="220" width="128" height="128"/>
+                                        <rect key="frame" x="227" y="234" width="128" height="128"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="AppIcon" id="Hhb-TZ-Dhg"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
-                                        <rect key="frame" x="198" y="185" width="154" height="17"/>
+                                        <rect key="frame" x="214" y="199" width="154" height="17"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="bookmarker for pinboard" id="S7v-7o-3vW">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -118,31 +118,30 @@
                                         </textFieldCell>
                                     </textField>
                                     <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="8" columnSpacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-wC-d8v">
-                                        <rect key="frame" x="0.0" y="39" width="550" height="128"/>
+                                        <rect key="frame" x="0.0" y="39" width="581" height="142"/>
                                         <constraints>
                                             <constraint firstItem="BnT-5s-hNA" firstAttribute="baseline" secondItem="z0k-hi-PE9" secondAttribute="baseline" id="IYE-0Z-dcO"/>
                                             <constraint firstItem="CrS-vC-exy" firstAttribute="baseline" secondItem="C22-76-eZj" secondAttribute="baseline" id="LoJ-fN-ij7"/>
                                             <constraint firstItem="tFr-vF-BUG" firstAttribute="baseline" secondItem="yie-kQ-G1L" secondAttribute="firstBaseline" id="eDv-gG-IHe"/>
                                             <constraint firstItem="Qxv-rg-ABv" firstAttribute="leading" secondItem="z0k-hi-PE9" secondAttribute="trailing" constant="11" id="j67-nL-ilG"/>
-                                            <constraint firstItem="WBf-JC-I4o" firstAttribute="trailing" secondItem="z0k-hi-PE9" secondAttribute="trailing" id="uNS-2e-7wk"/>
                                             <constraint firstItem="z0k-hi-PE9" firstAttribute="baseline" secondItem="Qxv-rg-ABv" secondAttribute="baseline" id="vga-4F-QcQ"/>
                                             <constraint firstItem="C22-76-eZj" firstAttribute="top" secondItem="yie-kQ-G1L" secondAttribute="bottom" constant="14" id="zFL-gz-Idc"/>
                                         </constraints>
                                         <rows>
-                                            <gridRow height="26" id="YOd-5p-TC4"/>
+                                            <gridRow height="40" id="YOd-5p-TC4"/>
                                             <gridRow height="26" id="Msd-oD-w0c"/>
                                             <gridRow height="26" id="qmv-ID-iZC"/>
                                             <gridRow height="26" id="Ih3-mv-O0U"/>
                                         </rows>
                                         <columns>
                                             <gridColumn width="130" id="QY9-5N-tbb"/>
-                                            <gridColumn width="258" id="eE1-Px-zYn"/>
+                                            <gridColumn width="300" id="eE1-Px-zYn"/>
                                             <gridColumn id="AQf-gc-PFg"/>
                                         </columns>
                                         <gridCells>
                                             <gridCell row="YOd-5p-TC4" column="QY9-5N-tbb" id="wMg-Ed-RkW">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mvw-no-2YG">
-                                                    <rect key="frame" x="-2" y="107" width="93" height="17"/>
+                                                    <rect key="frame" x="-2" y="107" width="93" height="30"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="API Token set?" id="rGg-KB-a36">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -152,7 +151,11 @@
                                             </gridCell>
                                             <gridCell row="YOd-5p-TC4" column="eE1-Px-zYn" id="m9S-34-vLZ">
                                                 <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WBf-JC-I4o">
-                                                    <rect key="frame" x="131" y="107" width="254" height="17"/>
+                                                    <rect key="frame" x="131" y="102" width="284" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="BYm-CH-BvY"/>
+                                                        <constraint firstAttribute="width" constant="280" id="NiV-ar-Njl"/>
+                                                    </constraints>
                                                     <textFieldCell key="cell" title="Label" id="0EK-bP-lya">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -173,7 +176,7 @@
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="eE1-Px-zYn" id="ohA-Y0-Agi">
                                                 <textField key="contentView" toolTip="Your pinboard API token can be found in settings -&gt; password at https://pinboard.in" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-hi-PE9" customClass="CutCopyPasteTextField" customModule="bookmarker_for_pinboard" customModuleProvider="target">
-                                                    <rect key="frame" x="133" y="70" width="250" height="22"/>
+                                                    <rect key="frame" x="133" y="70" width="292" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="GEW-r7-dNQ">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -183,7 +186,7 @@
                                             </gridCell>
                                             <gridCell row="Msd-oD-w0c" column="AQf-gc-PFg" id="upV-V0-chU">
                                                 <button key="contentView" toolTip="Will set or update the existing API token in your keychain." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qxv-rg-ABv">
-                                                    <rect key="frame" x="388" y="63" width="148" height="32"/>
+                                                    <rect key="frame" x="430" y="63" width="148" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Update API Token" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zBa-hs-V7N">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -259,7 +262,7 @@
                                         </gridCells>
                                     </gridView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">
-                                        <rect key="frame" x="134" y="-7" width="282" height="32"/>
+                                        <rect key="frame" x="150" y="-7" width="282" height="32"/>
                                         <buttonCell key="cell" type="push" title="Open in Safari Extensions Preferences…" alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Srx-0j-A4D">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -303,7 +306,7 @@ DQ
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="742.5"/>
+            <point key="canvasLocation" x="90.5" y="756"/>
         </scene>
     </scenes>
     <resources>
