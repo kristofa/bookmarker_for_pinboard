@@ -26,7 +26,7 @@ class ViewController: NSViewController {
             let response = apiTokenAccess.createOrUpdateToken(apiToken: apiToken)
         
             switch (response) {
-                case .Success : updateApiTokenSetTextFieldValueSuccess(message: "API token set.")
+                case .Success : updateApiTokenSetTextFieldValueSuccess(message: "API token updated.")
                 case .ErrorCreatingOrUpdatingApiToken(let osStatus) : updateApiTokenSetTextFieldValueFailure(message: "Error updating Keychain. OSStatus: \(osStatus). Try setting API token again.")
                 case .ErrorCreatingSecAccess(let osStatus) : updateApiTokenSetTextFieldValueFailure(message: "Error creating keychain access info. OSStatus: \(osStatus). Try setting API token again.")
                 case .ErrorCreatingTrustedApplicationsFailed(let osStatus1, let osStatus2) : updateApiTokenSetTextFieldValueFailure(message: "Error creating trusted applications for keychain. OSStatuses: \(osStatus1), \(osStatus2).")
