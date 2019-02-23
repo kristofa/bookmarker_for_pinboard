@@ -21,19 +21,26 @@ class ViewController: NSViewController {
  
     @IBAction func apiTokenButtonAction(_ sender: NSButtonCell) {
         let apiToken = apiTokenTextField.stringValue
-        let response = apiTokenAccess.createOrUpdateToken(apiToken: apiToken)
         
-        switch (response) {
-            case .Success : updateApiTokenSetTextFieldValueSuccess(message: "API token set.")
-            case .ErrorCreatingOrUpdatingApiToken(let osStatus) : updateApiTokenSetTextFieldValueFailure(message: "Error when updating API token in keychain. OSStatus: \(osStatus). Try setting API token again.")
-            case .ErrorCreatingSecAccess(let osStatus) : updateApiTokenSetTextFieldValueFailure(message: "Error creating keychain item access information. OSStatus: \(osStatus). Try setting API token again.")
-            case .ErrorCreatingTrustedApplicationsFailed(let osStatus1, let osStatus2) : updateApiTokenSetTextFieldValueFailure(message: "Error creating trusted applications for keychain. OSStatuses: \(osStatus1), \(osStatus2).")
-        }
+        if (validApiToken(apiToken: apiToken)) {
+            let response = apiTokenAccess.createOrUpdateToken(apiToken: apiToken)
         
-        // Clear field so token isn't visible anymore.
-        DispatchQueue.main.async {
-            self.apiTokenTextField.stringValue = ""
+            switch (response) {
+                case .Success : updateApiTokenSetTextFieldValueSuccess(message: "API token set.")
+                case .ErrorCreatingOrUpdatingApiToken(let osStatus) : updateApiTokenSetTextFieldValueFailure(message: "Error updating Keychain. OSStatus: \(osStatus). Try setting API token again.")
+                case .ErrorCreatingSecAccess(let osStatus) : updateApiTokenSetTextFieldValueFailure(message: "Error creating keychain access info. OSStatus: \(osStatus). Try setting API token again.")
+                case .ErrorCreatingTrustedApplicationsFailed(let osStatus1, let osStatus2) : updateApiTokenSetTextFieldValueFailure(message: "Error creating trusted applications for keychain. OSStatuses: \(osStatus1), \(osStatus2).")
+            }
+        
+            // Clear field so token isn't visible anymore.
+            DispatchQueue.main.async {
+                self.apiTokenTextField.stringValue = ""
+            }
         }
+        else {
+            updateApiTokenSetTextFieldValueFailure(message: "Invalid API token format. Expecting username:TOKEN")
+        }
+            
     }
     
     
@@ -110,6 +117,22 @@ class ViewController: NSViewController {
         DispatchQueue.main.async {
             self.apiTokenSetTextFieldCell.textColor = color
             self.apiTokenSetTextFieldCell.stringValue = value
+        }
+    }
+    
+    private func validApiToken(apiToken: String) -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[^\\s]{2,}:[A-Z0-9]{5,}")
+            let results = regex.matches(in: apiToken,
+                                        range: NSRange(apiToken.startIndex..., in: apiToken))
+            let matches = results.map {
+                String(apiToken[Range($0.range, in: apiToken)!])
+            }
+            return (matches.count == 1)
+            
+        } catch let error {
+            NSLog("invalid regex: \(error.localizedDescription)")
+            return false
         }
     }
     
