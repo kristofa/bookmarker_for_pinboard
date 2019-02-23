@@ -30,22 +30,31 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
                 
                 let responseDataAsString = data != nil ? String(data: data!, encoding: .utf8)! : "[No response data]"
                 if let response = response as? HTTPURLResponse {
-                    guard response.statusCode == 200 else {
-                        completionHandler(pinboardUrl, PinboardApiResponse.Error("Got an unexpected status code from api.pinboard.in: code: \(response.statusCode), response body: \(responseDataAsString)"))
-                        return
+                    
+                    switch (response.statusCode) {
+                        case 200 :
+                            self.okResponse(pinboardUrl: pinboardUrl, responseData: responseDataAsString, completionHandler: completionHandler)
+                        case 401 :
+                            completionHandler(pinboardUrl, PinboardApiResponse.Error("Got 'Forbidden' response. The configured API Token is probably invalid."))
+                        default :
+                            completionHandler(pinboardUrl, PinboardApiResponse.Error("Got an unexpected status code from api.pinboard.in: code: \(response.statusCode), response body: \(responseDataAsString)"))
                     }
                     
-                    guard responseDataAsString.contains("<result code=\"done\" />") else {
-                        completionHandler(pinboardUrl, PinboardApiResponse.Error(responseDataAsString))
-                        return
-                    }
-                    completionHandler(pinboardUrl, PinboardApiResponse.Succes)
                 } else {
                     completionHandler(pinboardUrl, PinboardApiResponse.Error("Got an unexpected response when invoking request to api.pinboard.in. Can't validate success. Response data: \(responseDataAsString)"))
                     return
                 }
             }
             task.resume()
+    }
+    
+    private func okResponse(pinboardUrl: PinboardUrl, responseData: String, completionHandler: (PinboardUrl, PinboardApiResponse) -> Void) -> Void {
+        
+        if (responseData.contains("<result code=\"done\" />")) {
+                completionHandler(pinboardUrl, PinboardApiResponse.Succes)
+        } else {
+            completionHandler(pinboardUrl, PinboardApiResponse.Error(responseData))
+        }
     }
     
     private func addQueryParams(url: URL, newParams: [URLQueryItem]) -> URL? {
