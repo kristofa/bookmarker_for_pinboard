@@ -15,10 +15,16 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var apiTokenButton: NSButtonCell!
     
+    @IBOutlet weak var apiTokenHelpButton: NSButtonCell!
     
     let sharedUserDefaults = UserDefaults(suiteName: "bookmarker_for_pinboard")!
     let apiTokenAccess = KeychainApiTokenAccess()
  
+    @IBAction func apiTokenHelpButtonAction(_ sender: NSButtonCell) {
+        guard let url = URL(string: "https://pinboard.in/settings/password") else { return }
+        NSWorkspace.shared.open(url)
+    }
+    
     @IBAction func apiTokenButtonAction(_ sender: NSButtonCell) {
         let apiToken = apiTokenTextField.stringValue
         
@@ -40,7 +46,6 @@ class ViewController: NSViewController {
         else {
             updateApiTokenSetTextFieldValueFailure(message: "Invalid API token format. Expecting username:TOKEN")
         }
-            
     }
     
     
