@@ -2,7 +2,7 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
     
-    let sharedUserDefaults = UserDefaults(suiteName: "bookmarker_for_pinboard")!
+    let sharedUserDefaults = CommonUserDefaults()
     
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
@@ -53,14 +53,16 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         
         DispatchQueue.main.async {
             SafariExtensionViewController.shared.readLaterCheckbox.state = NSControl.StateValue.off
-            if let readLater = self.sharedUserDefaults.string(forKey: "readLater") {
+            if let readLater = self.sharedUserDefaults.getReadLater() {
                 if (readLater == "Yes") {
                     SafariExtensionViewController.shared.readLaterCheckbox.state = NSControl.StateValue.on
                 }
             }
         
             SafariExtensionViewController.shared.privateCheckbox.state = NSControl.StateValue.off
-            if let isPrivate = self.sharedUserDefaults.string(forKey: "private") {
+            NSLog("Checking private value")
+            if let isPrivate = self.sharedUserDefaults.getPrivate() {
+                NSLog("Is Private value: \(isPrivate)")
                 if (isPrivate == "Yes") {
                     SafariExtensionViewController.shared.privateCheckbox.state = NSControl.StateValue.on
                 }

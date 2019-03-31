@@ -28,6 +28,8 @@
 		6D9F4A4321EB8A9A003A7BC7 /* CommonKeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */; };
 		6D9F4A4821EB8CA4003A7BC7 /* ApiTokenGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F4A4721EB8CA4003A7BC7 /* ApiTokenGetResponse.swift */; };
 		6D9F4A4921EB9AC2003A7BC7 /* ApiTokenGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F4A4721EB8CA4003A7BC7 /* ApiTokenGetResponse.swift */; };
+		6DB98D9A2250C406005B1E0C /* CommonUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB98D992250C406005B1E0C /* CommonUserDefaults.swift */; };
+		6DB98D9B2250C406005B1E0C /* CommonUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB98D992250C406005B1E0C /* CommonUserDefaults.swift */; };
 		6DC8FCEE21E20B9400997B80 /* pinboard_toolbar_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6DC8FCED21E20B9300997B80 /* pinboard_toolbar_icon.pdf */; };
 		6DEF337921DCD33800123E74 /* PinboardApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF337821DCD33800123E74 /* PinboardApi.swift */; };
 		6DEF337D21DCE01D00123E74 /* PinboardApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF337C21DCE01D00123E74 /* PinboardApiResponse.swift */; };
@@ -99,6 +101,7 @@
 		6D9F4A3921EB530B003A7BC7 /* KeychainApiTokenAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainApiTokenAccess.swift; sourceTree = "<group>"; };
 		6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonKeychainAccess.swift; sourceTree = "<group>"; };
 		6D9F4A4721EB8CA4003A7BC7 /* ApiTokenGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTokenGetResponse.swift; sourceTree = "<group>"; };
+		6DB98D992250C406005B1E0C /* CommonUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUserDefaults.swift; sourceTree = "<group>"; };
 		6DC8FCED21E20B9300997B80 /* pinboard_toolbar_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pinboard_toolbar_icon.pdf; sourceTree = "<group>"; };
 		6DEF337821DCD33800123E74 /* PinboardApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardApi.swift; sourceTree = "<group>"; };
 		6DEF337C21DCE01D00123E74 /* PinboardApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardApiResponse.swift; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 				6D59F41E21D8FF5900143454 /* Info.plist */,
 				6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */,
 				6D020C2121EE725D00859606 /* CutCopyPasteTextField.swift */,
+				6DB98D992250C406005B1E0C /* CommonUserDefaults.swift */,
 			);
 			path = "bookmarker for pinboard";
 			sourceTree = "<group>";
@@ -310,7 +314,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -329,7 +333,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Keychain = {
 								enabled = 0;
@@ -407,6 +411,7 @@
 				6D020C2221EE725D00859606 /* CutCopyPasteTextField.swift in Sources */,
 				6D59F41B21D8FF5700143454 /* ViewController.swift in Sources */,
 				6D59F41621D8FF5700143454 /* AppDelegate.swift in Sources */,
+				6DB98D9A2250C406005B1E0C /* CommonUserDefaults.swift in Sources */,
 				6D9F4A3D21EB5574003A7BC7 /* KeychainApiTokenAccess.swift in Sources */,
 				6D9F4A4221EB8A7C003A7BC7 /* CommonKeychainAccess.swift in Sources */,
 				6D9F4A4921EB9AC2003A7BC7 /* ApiTokenGetResponse.swift in Sources */,
@@ -437,6 +442,7 @@
 				6DEF337921DCD33800123E74 /* PinboardApi.swift in Sources */,
 				6DEF337D21DCE01D00123E74 /* PinboardApiResponse.swift in Sources */,
 				6D59F44421D8FF5900143454 /* SafariExtensionViewController.swift in Sources */,
+				6DB98D9B2250C406005B1E0C /* CommonUserDefaults.swift in Sources */,
 				6D9F4A4321EB8A9A003A7BC7 /* CommonKeychainAccess.swift in Sources */,
 				6D59F44221D8FF5900143454 /* SafariExtensionHandler.swift in Sources */,
 				6D14370621DE3E340025FE25 /* PinboardUrl.swift in Sources */,

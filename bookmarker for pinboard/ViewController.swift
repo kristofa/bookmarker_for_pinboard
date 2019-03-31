@@ -17,8 +17,8 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var apiTokenHelpButton: NSButtonCell!
     
-    let sharedUserDefaults = UserDefaults(suiteName: "bookmarker_for_pinboard")!
     let apiTokenAccess = KeychainApiTokenAccess()
+    let userDefaults = CommonUserDefaults()
  
     @IBAction func apiTokenHelpButtonAction(_ sender: NSButtonCell) {
         guard let url = URL(string: "https://pinboard.in/settings/password") else { return }
@@ -51,13 +51,13 @@ class ViewController: NSViewController {
     
     @IBAction func readLaterButtonAction(_ sender: NSPopUpButton) {
         if let item = sender.selectedItem {
-            sharedUserDefaults.set(item.title, forKey: "readLater")
+            userDefaults.setReadLater(value: item.title)
         }
     }
     
     @IBAction func privateButtonAction(_ sender: NSPopUpButton) {
         if let item = sender.selectedItem {
-            sharedUserDefaults.set(item.title, forKey: "private")
+            userDefaults.setPrivate(value: item.title)
         }
     }
     
@@ -78,25 +78,25 @@ class ViewController: NSViewController {
                 updateApiTokenSetTextFieldValueFailure(message: "Unknown error when getting API token. OSStatus \(osStatus). Update API token.")
         }
         
-        if let readLater = sharedUserDefaults.string(forKey: "readLater") {
+        if let readLater = userDefaults.getReadLater() {
             DispatchQueue.main.async {
                 self.readLaterButton.selectItem(withTitle: readLater)
             }
         } else {
-            sharedUserDefaults.set("No", forKey: "readLater")
+            let value = userDefaults.setReadLaterDefaultValue()
             DispatchQueue.main.async {
-                self.readLaterButton.selectItem(withTitle: "No")
+                self.readLaterButton.selectItem(withTitle: value)
             }
         }
         
-        if let isPrivate = sharedUserDefaults.string(forKey: "private") {
+        if let isPrivate = userDefaults.getPrivate() {
             DispatchQueue.main.async {
                 self.privateButton.selectItem(withTitle: isPrivate)
             }
         } else {
-            sharedUserDefaults.set("No", forKey: "private")
+            let value = userDefaults.setPrivateDefaultValue()
             DispatchQueue.main.async {
-                self.privateButton.selectItem(withTitle: "No")
+                self.privateButton.selectItem(withTitle: value)
             }
         }
     }
