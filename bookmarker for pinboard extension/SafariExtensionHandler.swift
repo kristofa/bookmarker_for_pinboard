@@ -25,6 +25,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     override func popoverWillShow(in window: SFSafariWindow) {
+    SafariExtensionViewController.shared.addToPinboardPopup.window?.makeFirstResponder(SafariExtensionViewController.shared.tagsTextField)
         
         window.getActiveTab {
             activeTab in activeTab?.getActivePage {

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModule="bookmarker_for_pinboard_Extension" customModuleProvider="target">
             <connections>
+                <outlet property="addToPinboardPopup" destination="c22-O7-iKe" id="ip8-8t-no1"/>
                 <outlet property="descriptionTextField" destination="tH0-3P-99u" id="DYV-Ch-Req"/>
                 <outlet property="privateCheckbox" destination="i5S-Cp-9FM" id="biw-il-WRp"/>
                 <outlet property="readLaterCheckbox" destination="bvU-OC-yr7" id="CCU-UY-JFQ"/>

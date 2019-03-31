@@ -11,6 +11,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     let pinboardApi = PinboardApi()
     let apiTokenAccess = CommonKeychainAccess()
     
+    @IBOutlet weak var addToPinboardPopup: NSView!
     @IBOutlet weak var statusTextField: NSTextField!
     @IBOutlet weak var descriptionTextField: NSTextField!
     @IBOutlet weak var urlTextField: NSTextField!
