@@ -11,7 +11,7 @@ import Foundation
 
 class CommonUserDefaults {
     
-    static let sharedUserDefaults = UserDefaults(suiteName: "bookmarker.for.pinboard")!
+    static let sharedUserDefaults = UserDefaults(suiteName: "LFASJ6UBQ7.bookmarker.for.pinboard")!
     static let readLaterKey = "readLater"
     static let privateKey = "private"
     
