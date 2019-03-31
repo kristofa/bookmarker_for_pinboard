@@ -127,7 +127,7 @@ class ViewController: NSViewController {
     
     private func validApiToken(apiToken: String) -> Bool {
         do {
-            let regex = try NSRegularExpression(pattern: "[^\\s]{2,}:[A-Z0-9]{5,}")
+            let regex = try NSRegularExpression(pattern: "[^\\s]{2,}:[A-Za-z0-9]{5,}")
             let results = regex.matches(in: apiToken,
                                         range: NSRange(apiToken.startIndex..., in: apiToken))
             let matches = results.map {
