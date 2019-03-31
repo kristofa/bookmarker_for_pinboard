@@ -60,9 +60,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             }
         
             SafariExtensionViewController.shared.privateCheckbox.state = NSControl.StateValue.off
-            NSLog("Checking private value")
             if let isPrivate = self.sharedUserDefaults.getPrivate() {
-                NSLog("Is Private value: \(isPrivate)")
                 if (isPrivate == "Yes") {
                     SafariExtensionViewController.shared.privateCheckbox.state = NSControl.StateValue.on
                 }
