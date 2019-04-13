@@ -52,7 +52,7 @@
                 </textField>
                 <textField identifier="titleTextField" toolTip="Title of URL you want to save" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-a3-Zko">
                     <rect key="frame" x="16" y="227" width="302" height="22"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="eKS-es-a9A">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="eKS-es-a9A">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -65,11 +65,14 @@
                         <constraint firstAttribute="width" secondItem="tH0-3P-99u" secondAttribute="height" multiplier="9:2" constant="68" id="QVa-hQ-m9R"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="234" id="rtU-V5-ajh"/>
                     </constraints>
-                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="ThG-VG-H8K">
+                    <textFieldCell key="cell" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="ThG-VG-H8K">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="descriptionTextFieldAction:" target="-2" id="v13-P0-GuN"/>
+                    </connections>
                 </textField>
                 <textField toolTip="Tags for URL separated by spaces or comma's" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cLy-B4-2Kd">
                     <rect key="frame" x="16" y="127" width="302" height="22"/>
@@ -77,10 +80,13 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="302" id="Vbf-aY-o6m"/>
                         <constraint firstAttribute="height" constant="22" id="ide-Et-rTv"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Tags" drawsBackground="YES" id="CKw-kb-S9c">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Tags" drawsBackground="YES" id="CKw-kb-S9c">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <action selector="tagsTextFieldAction:" target="-2" id="VyA-LS-Itn"/>
+                        </connections>
                     </textFieldCell>
                 </textField>
                 <button identifier="privateCheckbox" toolTip="Indicates if the URL can be shared publicly or not" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-Cp-9FM">
