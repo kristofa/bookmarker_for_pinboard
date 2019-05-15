@@ -7,7 +7,19 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
+            
             NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+            
+            if let selectedText = userInfo?["text"] {
+                DispatchQueue.main.async {
+                    SafariExtensionViewController.shared.descriptionTextField.stringValue = selectedText as! String
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
+                }
+            }
         }
     }
     
@@ -31,11 +43,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             activeTab in activeTab?.getActivePage {
                 activePage in activePage?.getPropertiesWithCompletionHandler {
                     pageProperties in
+                    activePage?.dispatchMessageToScript(withName: "getSelectedText", userInfo: nil)
                     if let title = pageProperties?.title, let url = pageProperties?.url {
                         DispatchQueue.main.async {
                             SafariExtensionViewController.shared.urlTextField.stringValue = url.absoluteString
                             SafariExtensionViewController.shared.titleTextField.stringValue = title
-                            SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
                             SafariExtensionViewController.shared.tagsTextField.stringValue = ""
                             SafariExtensionViewController.shared.statusTextField.stringValue = ""
                         }
@@ -43,7 +55,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                         DispatchQueue.main.async {
                             SafariExtensionViewController.shared.urlTextField.stringValue = ""
                             SafariExtensionViewController.shared.titleTextField.stringValue = ""
-                            SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
                             SafariExtensionViewController.shared.tagsTextField.stringValue = ""
                             SafariExtensionViewController.shared.statusTextField.stringValue = ""
                         }
