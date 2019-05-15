@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D020C2221EE725D00859606 /* CutCopyPasteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D020C2121EE725D00859606 /* CutCopyPasteTextField.swift */; };
+		6D02EE6E228B248F0082B349 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6D02EE6D228B248F0082B349 /* script.js */; };
 		6D14370621DE3E340025FE25 /* PinboardUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14370521DE3E340025FE25 /* PinboardUrl.swift */; };
 		6D59F41421D8FF5700143454 /* bookmarker for pinboard.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41321D8FF5700143454 /* bookmarker for pinboard.entitlements */; };
 		6D59F41621D8FF5700143454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F41521D8FF5700143454 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		6D020C2121EE725D00859606 /* CutCopyPasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutCopyPasteTextField.swift; sourceTree = "<group>"; };
+		6D02EE6D228B248F0082B349 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		6D14370521DE3E340025FE25 /* PinboardUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardUrl.swift; sourceTree = "<group>"; };
 		6D59F41021D8FF5700143454 /* bookmarker for pinboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bookmarker for pinboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D59F41321D8FF5700143454 /* bookmarker for pinboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bookmarker for pinboard.entitlements"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				6DEF337821DCD33800123E74 /* PinboardApi.swift */,
 				6DEF337C21DCE01D00123E74 /* PinboardApiResponse.swift */,
 				6D14370521DE3E340025FE25 /* PinboardUrl.swift */,
+				6D02EE6D228B248F0082B349 /* script.js */,
 			);
 			path = "bookmarker for pinboard extension";
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DC8FCEE21E20B9400997B80 /* pinboard_toolbar_icon.pdf in Resources */,
+				6D02EE6E228B248F0082B349 /* script.js in Resources */,
 				6D59F44C21D8FF5900143454 /* ToolbarItemIcon.pdf in Resources */,
 				6D59F44721D8FF5900143454 /* SafariExtensionViewController.xib in Resources */,
 			);
