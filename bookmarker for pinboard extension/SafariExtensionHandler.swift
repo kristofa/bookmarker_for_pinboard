@@ -18,6 +18,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                         SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
                     }
                 }
+            case "openPopover" :
+                page.getContainingTab { (tab) in
+                    tab.getContainingWindow(completionHandler: { (window) in
+                        window?.getToolbarItem(completionHandler: { (toolbaritem) in
+                            toolbaritem?.showPopover()
+                        })
+                    })
+                }
             default :
                 NSLog("Received unsupported message: \(messageName)")
         }
