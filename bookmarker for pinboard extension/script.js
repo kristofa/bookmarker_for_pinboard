@@ -40,4 +40,10 @@ if (window.top === window) {
                                 }
                                 //console.log(selectedText);
                               });
+    
+    document.addEventListener("keydown", function (keyDownEvent) {
+                                if (keyDownEvent.ctrlKey && keyDownEvent.altKey && keyDownEvent.key === "a") {
+                                    safari.extension.dispatchMessage("openPopover");
+                                }
+                              });
 }
