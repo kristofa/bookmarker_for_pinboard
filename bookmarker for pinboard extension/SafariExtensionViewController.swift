@@ -62,7 +62,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
             case .Succes:
                 NSLog("Pinboard Request successful")
                 self.updateStatusTextFieldSuccess(message: "URL successfully submitted to Pinboard.")
-                self.dismiss(self)
+                self.dismissPopover()
             case .Error(let value):
                 NSLog("Pinboard Request failed. Error: \(value)")
                 self.updateStatusTextFieldFailure(message: value)
