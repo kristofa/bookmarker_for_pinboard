@@ -58,14 +58,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                             SafariExtensionViewController.shared.urlTextField.stringValue = url.absoluteString
                             SafariExtensionViewController.shared.titleTextField.stringValue = title
                             SafariExtensionViewController.shared.tagsTextField.stringValue = ""
-                            SafariExtensionViewController.shared.statusTextField.stringValue = ""
+                            SafariExtensionViewController.shared.statusTextView.string = ""
                         }
                     } else {
                         DispatchQueue.main.async {
                             SafariExtensionViewController.shared.urlTextField.stringValue = ""
                             SafariExtensionViewController.shared.titleTextField.stringValue = ""
                             SafariExtensionViewController.shared.tagsTextField.stringValue = ""
-                            SafariExtensionViewController.shared.statusTextField.stringValue = ""
+                            SafariExtensionViewController.shared.statusTextView.string = ""
                         }
                     }
                 }

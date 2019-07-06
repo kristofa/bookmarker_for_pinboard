@@ -12,7 +12,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     let apiTokenAccess = CommonKeychainAccess()
     
     @IBOutlet weak var addToPinboardPopup: NSView!
-    @IBOutlet weak var statusTextField: NSTextField!
+    @IBOutlet var statusTextView: NSTextView!
     @IBOutlet weak var descriptionTextField: NSTextField!
     @IBOutlet weak var urlTextField: NSTextField!
     @IBOutlet weak var titleTextField: NSTextField!
@@ -85,8 +85,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     private func updateTextAndColorOfStatusField(value: String, color: NSColor) -> Void {
         DispatchQueue.main.async {
-            self.statusTextField.textColor = color
-            self.statusTextField.stringValue = value
+            self.statusTextView.textColor = color
+            self.statusTextView.string = value
         }
     }
     
