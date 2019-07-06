@@ -24,7 +24,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             (data, response, error) in
             
                 guard error == nil else {
-                    completionHandler(pinboardUrl, PinboardApiResponse.Error("Got an error when invoking request to api.pinboard.in: \(error.debugDescription)"))
+                    completionHandler(pinboardUrl, PinboardApiResponse.Error("Got an error when invoking request to api.pinboard.in: \(error!.localizedDescription)"))
                     return
                 }
                 
