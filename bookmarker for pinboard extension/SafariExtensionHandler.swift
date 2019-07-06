@@ -10,12 +10,12 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             case "selectedText" :
                 if let selectedText = userInfo?["text"] {
                     DispatchQueue.main.async {
-                        SafariExtensionViewController.shared.descriptionTextField.stringValue = selectedText as! String
+                        SafariExtensionViewController.shared.descriptionTextView.string = selectedText as! String
                     }
                 }
                 else {
                     DispatchQueue.main.async {
-                        SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
+                        SafariExtensionViewController.shared.descriptionTextView.string = ""
                     }
                 }
             case "openPopover" :

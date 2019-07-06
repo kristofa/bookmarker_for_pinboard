@@ -13,7 +13,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     @IBOutlet weak var addToPinboardPopup: NSView!
     @IBOutlet weak var statusTextField: NSTextField!
-    @IBOutlet weak var descriptionTextField: NSTextField!
+   
+   
+    @IBOutlet var descriptionTextView: NSTextView!
     @IBOutlet weak var urlTextField: NSTextField!
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var tagsTextField: NSTextField!
@@ -21,10 +23,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     @IBOutlet weak var privateCheckbox: NSButton!
     
     @IBAction func tagsTextFieldAction(_ sender: Any) {
-        saveBookMark()
-    }
-    
-    @IBAction func descriptionTextFieldAction(_ sender: Any) {
         saveBookMark()
     }
     
@@ -54,7 +52,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
             apiTokenFromKeychain = token
         }
         
-        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue)
+        
+        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextView.string, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue)
         
         pinboardApi.submit(apiToken: apiTokenFromKeychain, pinboardUrl: pinboardUrl) {
             (url, response) in

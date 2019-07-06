@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModule="bookmarker_for_pinboard_Extension" customModuleProvider="target">
             <connections>
                 <outlet property="addToPinboardPopup" destination="c22-O7-iKe" id="ip8-8t-no1"/>
-                <outlet property="descriptionTextField" destination="tH0-3P-99u" id="DYV-Ch-Req"/>
+                <outlet property="descriptionTextView" destination="ZPV-S4-PYU" id="8lw-jc-8EL"/>
                 <outlet property="privateCheckbox" destination="i5S-Cp-9FM" id="biw-il-WRp"/>
                 <outlet property="readLaterCheckbox" destination="bvU-OC-yr7" id="CCU-UY-JFQ"/>
                 <outlet property="statusTextField" destination="yEz-UC-zX6" id="6gg-dS-CbR"/>
@@ -57,22 +58,6 @@
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
-                </textField>
-                <textField identifier="descriptionTextField" toolTip="Description of URL you want to save" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="tH0-3P-99u">
-                    <rect key="frame" x="16" y="162" width="302" height="52"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="52" id="Mvc-Mc-iGD"/>
-                        <constraint firstAttribute="width" secondItem="tH0-3P-99u" secondAttribute="height" multiplier="9:2" constant="68" id="QVa-hQ-m9R"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="234" id="rtU-V5-ajh"/>
-                    </constraints>
-                    <textFieldCell key="cell" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="ThG-VG-H8K">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <action selector="descriptionTextFieldAction:" target="-2" id="v13-P0-GuN"/>
-                    </connections>
                 </textField>
                 <textField toolTip="Tags for URL separated by spaces or comma's" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cLy-B4-2Kd">
                     <rect key="frame" x="16" y="127" width="302" height="22"/>
@@ -141,34 +126,64 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <scrollView identifier="descriptionTextView" toolTip="Description for URL" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y1r-Vn-R0r">
+                    <rect key="frame" x="16" y="157" width="302" height="62"/>
+                    <clipView key="contentView" copiesOnScroll="NO" id="mG4-er-U1B">
+                        <rect key="frame" x="0.0" y="0.0" width="302" height="62"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ZPV-S4-PYU">
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="62"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="302" height="62"/>
+                                <size key="maxSize" width="302" height="10000000"/>
+                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="302" id="YHL-MF-ll9"/>
+                        <constraint firstAttribute="height" constant="62" id="xuJ-gc-6ge"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="UcB-cL-3YY">
+                        <rect key="frame" x="0.0" y="46" width="302" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="opo-wr-GL7">
+                        <rect key="frame" x="286" y="0.0" width="16" height="62"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i5S-Cp-9FM" secondAttribute="trailing" constant="262" id="3GG-3i-a1g"/>
-                <constraint firstItem="tH0-3P-99u" firstAttribute="top" secondItem="NaV-a3-Zko" secondAttribute="bottom" constant="13" id="4Oi-dD-Z1O"/>
                 <constraint firstItem="bvU-OC-yr7" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="6qL-Fj-e8i"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="148" id="9La-IX-CeZ"/>
                 <constraint firstItem="bvU-OC-yr7" firstAttribute="leading" secondItem="i5S-Cp-9FM" secondAttribute="leading" id="9f0-Bf-S8c"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="leading" secondItem="yEz-UC-zX6" secondAttribute="leading" id="Ac6-jB-D66"/>
                 <constraint firstItem="X1s-ox-q2G" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Cyx-9V-xVv"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="leading" secondItem="tH0-3P-99u" secondAttribute="leading" id="FgA-iD-P0S"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="top" secondItem="X1s-ox-q2G" secondAttribute="bottom" constant="15" id="G2Q-T3-XYK"/>
                 <constraint firstItem="i5S-Cp-9FM" firstAttribute="top" secondItem="bvU-OC-yr7" secondAttribute="bottom" constant="12" id="LMQ-mq-4Js"/>
+                <constraint firstItem="Y1r-Vn-R0r" firstAttribute="trailing" secondItem="NaV-a3-Zko" secondAttribute="trailing" id="Lr1-Ce-puU"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cLy-B4-2Kd" secondAttribute="trailing" constant="20" id="NCT-Ij-uPU"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="trailing" constant="20" id="OSZ-XY-VRz"/>
+                <constraint firstItem="cLy-B4-2Kd" firstAttribute="top" secondItem="Y1r-Vn-R0r" secondAttribute="bottom" constant="8" symbolic="YES" id="NlT-TE-e6E"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="leading" secondItem="X1s-ox-q2G" secondAttribute="leading" id="Oou-RV-DxI"/>
                 <constraint firstItem="ewh-WU-08f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Rs1-1z-2vM"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bvU-OC-yr7" secondAttribute="trailing" constant="238" id="S1u-T2-dBT"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X1s-ox-q2G" secondAttribute="trailing" constant="20" id="SQp-Pu-AYT"/>
                 <constraint firstItem="yEz-UC-zX6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4Iy-aV-wGF" secondAttribute="bottom" constant="10" id="Sdq-zN-lJ4"/>
+                <constraint firstItem="Y1r-Vn-R0r" firstAttribute="leading" secondItem="NaV-a3-Zko" secondAttribute="leading" id="TVe-gR-gki"/>
                 <constraint firstItem="X1s-ox-q2G" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yEz-UC-zX6" secondAttribute="bottom" constant="16" id="Vg8-vc-kJk"/>
                 <constraint firstItem="i5S-Cp-9FM" firstAttribute="leading" secondItem="ewh-WU-08f" secondAttribute="leading" id="W4X-6l-TPV"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="trailing" secondItem="X1s-ox-q2G" secondAttribute="trailing" id="WfB-k2-D7D"/>
                 <constraint firstItem="yEz-UC-zX6" firstAttribute="top" secondItem="4Iy-aV-wGF" secondAttribute="bottom" constant="10" id="a6B-LG-Esr"/>
                 <constraint firstItem="yEz-UC-zX6" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="agK-H7-iet"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yEz-UC-zX6" secondAttribute="trailing" constant="20" id="dGW-eC-33g"/>
+                <constraint firstItem="Y1r-Vn-R0r" firstAttribute="top" secondItem="NaV-a3-Zko" secondAttribute="bottom" constant="8" symbolic="YES" id="gaT-hI-KGy"/>
                 <constraint firstAttribute="trailing" secondItem="ewh-WU-08f" secondAttribute="trailing" constant="205" id="hwX-Uf-IWv"/>
                 <constraint firstAttribute="bottom" secondItem="ewh-WU-08f" secondAttribute="bottom" constant="31" id="j7c-Az-iyD"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="bottom" constant="12" id="jBy-fI-FKe"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Iy-aV-wGF" secondAttribute="trailing" constant="202" id="jTz-d4-03p"/>
                 <constraint firstItem="ewh-WU-08f" firstAttribute="top" secondItem="i5S-Cp-9FM" secondAttribute="bottom" constant="19" id="k0V-qR-m3n"/>
                 <constraint firstItem="bvU-OC-yr7" firstAttribute="top" secondItem="cLy-B4-2Kd" secondAttribute="bottom" constant="16" id="lJD-l7-yvE"/>
