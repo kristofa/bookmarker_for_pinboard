@@ -46,10 +46,13 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="302" id="QV6-Fs-HCw"/>
                         <constraint firstAttribute="width" secondItem="X1s-ox-q2G" secondAttribute="height" multiplier="117:11" constant="68" id="zGe-pl-xsR"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" identifier="urlTextField" placeholderString="URL" drawsBackground="YES" id="cYp-cv-hBy">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" identifier="urlTextField" placeholderString="URL" drawsBackground="YES" id="cYp-cv-hBy">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <action selector="urlTextFieldAction:" target="-2" id="hf7-eH-equ"/>
+                        </connections>
                     </textFieldCell>
                 </textField>
                 <textField identifier="titleTextField" toolTip="Title of URL you want to save" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-a3-Zko">
@@ -59,6 +62,9 @@
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="titleTextFieldAction:" target="-2" id="zEr-8B-LSx"/>
+                    </connections>
                 </textField>
                 <textField identifier="descriptionTextField" toolTip="Description of URL you want to save" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="tH0-3P-99u">
                     <rect key="frame" x="16" y="162" width="302" height="52"/>

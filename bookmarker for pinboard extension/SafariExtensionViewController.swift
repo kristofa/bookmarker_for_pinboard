@@ -20,6 +20,14 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     @IBOutlet weak var readLaterCheckbox: NSButton!
     @IBOutlet weak var privateCheckbox: NSButton!
     
+    @IBAction func urlTextFieldAction(_ sender: Any) {
+        saveBookMark()
+    }
+    
+    @IBAction func titleTextFieldAction(_ sender: Any) {
+        saveBookMark()
+    }
+    
     @IBAction func tagsTextFieldAction(_ sender: Any) {
         saveBookMark()
     }
