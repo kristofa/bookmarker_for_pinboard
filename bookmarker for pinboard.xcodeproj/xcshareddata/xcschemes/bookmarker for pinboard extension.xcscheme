@@ -52,6 +52,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D8D776223394BD200EABABD"
+               BuildableName = "bookmarker for pinboard Tests.xctest"
+               BlueprintName = "bookmarker for pinboard Tests"
+               ReferencedContainer = "container:bookmarker for pinboard.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
