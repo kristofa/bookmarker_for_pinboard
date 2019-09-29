@@ -9,7 +9,18 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
         
         let updatedTitle = pinboardUrl.title.replacingOccurrences(of: " ", with: "+")
         
-        guard let url = addQueryParams(url: PinboardApi.pinboardUrl, newParams: [URLQueryItem.init(name:"url", value: pinboardUrl.url), URLQueryItem.init(name: "description", value: updatedTitle), URLQueryItem.init(name: "auth_token", value: apiToken), URLQueryItem.init(name: "extended", value: pinboardUrl.description), URLQueryItem.init(name: "tags", value: pinboardUrl.tags), URLQueryItem.init(name: "shared", value: boolToString(value: !pinboardUrl.isPrivate)), URLQueryItem.init(name: "toread", value: boolToString(value: pinboardUrl.readLater))] ) else {
+        guard let url = addQueryParams(
+            url: PinboardApi.pinboardUrl,
+            newParams:
+            [
+                URLQueryItem.init(name:"url", value: pinboardUrl.url),
+                URLQueryItem.init(name: "description", value: updatedTitle),
+                URLQueryItem.init(name: "auth_token", value: apiToken),
+                URLQueryItem.init(name: "extended", value: pinboardUrl.description),
+                URLQueryItem.init(name: "tags", value: pinboardUrl.tags),
+                URLQueryItem.init(name: "shared", value: boolToString(value: !pinboardUrl.isPrivate)),
+                URLQueryItem.init(name: "toread", value: boolToString(value: pinboardUrl.readLater)),
+                URLQueryItem.init(name: "format", value: "json")] ) else {
             completionHandler(pinboardUrl, PinboardApiResponse.Error("Unable to create pinboard url"))
             return
         }
@@ -33,7 +44,8 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
                     
                     switch (response.statusCode) {
                         case 200 :
-                            self.okResponse(pinboardUrl: pinboardUrl, responseData: responseDataAsString, completionHandler: completionHandler)
+                            let responseToReturn = PinboardApiResponseParser.parseDefaultResponse(body: data ?? Data())
+                            completionHandler(pinboardUrl, responseToReturn)
                         case 401 :
                             completionHandler(pinboardUrl, PinboardApiResponse.Error("Got 'Forbidden' response. The configured API Token is probably invalid."))
                         default :
@@ -48,14 +60,6 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             task.resume()
     }
     
-    private func okResponse(pinboardUrl: PinboardUrl, responseData: String, completionHandler: (PinboardUrl, PinboardApiResponse) -> Void) -> Void {
-        
-        if (responseData.contains("<result code=\"done\" />")) {
-                completionHandler(pinboardUrl, PinboardApiResponse.Succes)
-        } else {
-            completionHandler(pinboardUrl, PinboardApiResponse.Error(responseData))
-        }
-    }
     
     private func addQueryParams(url: URL, newParams: [URLQueryItem]) -> URL? {
         let urlComponents = NSURLComponents.init(url: url, resolvingAgainstBaseURL: false)
