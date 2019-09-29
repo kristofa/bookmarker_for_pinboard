@@ -1,7 +1,14 @@
-import XCTest
-@testable import pinboard_in_bookmarker
+//
+//  bookmarker_for_pinboard_Tests.swift
+//  bookmarker for pinboard Tests
+//
+//  Created by Kristof Adriaenssens on 23/09/2019.
+//  Copyright © 2019 Kristof Adriaenssens. All rights reserved.
+//
 
-class Pinboard_IntegrationTests: XCTestCase {
+import XCTest
+
+class bookmarker_for_pinboard_Tests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,7 +25,7 @@ class Pinboard_IntegrationTests: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

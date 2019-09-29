@@ -15,14 +15,14 @@
 		6D59F41921D8FF5700143454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41721D8FF5700143454 /* Main.storyboard */; };
 		6D59F41B21D8FF5700143454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F41A21D8FF5700143454 /* ViewController.swift */; };
 		6D59F41D21D8FF5900143454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F41C21D8FF5900143454 /* Assets.xcassets */; };
-		6D59F42821D8FF5900143454 /* Pinboard_IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F42721D8FF5900143454 /* Pinboard_IntegrationTests.swift */; };
-		6D59F43321D8FF5900143454 /* Pinboard_IntegrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F43221D8FF5900143454 /* Pinboard_IntegrationUITests.swift */; };
 		6D59F43A21D8FF5900143454 /* bookmarker for pinboard Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6D59F43F21D8FF5900143454 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59F43E21D8FF5900143454 /* Cocoa.framework */; };
 		6D59F44221D8FF5900143454 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F44121D8FF5900143454 /* SafariExtensionHandler.swift */; };
 		6D59F44421D8FF5900143454 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59F44321D8FF5900143454 /* SafariExtensionViewController.swift */; };
 		6D59F44721D8FF5900143454 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F44521D8FF5900143454 /* SafariExtensionViewController.xib */; };
 		6D59F44C21D8FF5900143454 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6D59F44B21D8FF5900143454 /* ToolbarItemIcon.pdf */; };
+		6D8D776623394BD200EABABD /* PinboardApiResponseParser_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8D776523394BD200EABABD /* PinboardApiResponseParser_Tests.swift */; };
+		6D8D776F23394E2800EABABD /* PinboardApiResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8D776D23394D6E00EABABD /* PinboardApiResponseParser.swift */; };
 		6D9F4A3D21EB5574003A7BC7 /* KeychainApiTokenAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F4A3921EB530B003A7BC7 /* KeychainApiTokenAccess.swift */; };
 		6D9F4A3E21EB5579003A7BC7 /* ApiTokenCreateOrUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F4A3721EB4CB5003A7BC7 /* ApiTokenCreateOrUpdateResponse.swift */; };
 		6D9F4A4221EB8A7C003A7BC7 /* CommonKeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */; };
@@ -37,26 +37,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6D59F42421D8FF5900143454 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D59F40821D8FF5700143454 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D59F40F21D8FF5700143454;
-			remoteInfo = "Pinboard Integration";
-		};
-		6D59F42F21D8FF5900143454 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D59F40821D8FF5700143454 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D59F40F21D8FF5700143454;
-			remoteInfo = "Pinboard Integration";
-		};
 		6D59F43B21D8FF5900143454 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6D59F40821D8FF5700143454 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6D59F43821D8FF5900143454;
 			remoteInfo = "Pinboard Integration Extension";
+		};
+		6D8D776823394BD200EABABD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D59F40821D8FF5700143454 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D59F40F21D8FF5700143454;
+			remoteInfo = "bookmarker for pinboard";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -85,12 +78,6 @@
 		6D59F41A21D8FF5700143454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D59F41C21D8FF5900143454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D59F41E21D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D59F42321D8FF5900143454 /* bookmarker for pinboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookmarker for pinboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D59F42721D8FF5900143454 /* Pinboard_IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinboard_IntegrationTests.swift; sourceTree = "<group>"; };
-		6D59F42921D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D59F42E21D8FF5900143454 /* bookmarker for pinboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookmarker for pinboardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D59F43221D8FF5900143454 /* Pinboard_IntegrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinboard_IntegrationUITests.swift; sourceTree = "<group>"; };
-		6D59F43421D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "bookmarker for pinboard Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D59F43E21D8FF5900143454 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6D59F44121D8FF5900143454 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
@@ -99,6 +86,10 @@
 		6D59F44821D8FF5900143454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D59F44B21D8FF5900143454 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		6D59F44D21D8FF5900143454 /* bookmarker for pinboard extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bookmarker for pinboard extension.entitlements"; sourceTree = "<group>"; };
+		6D8D776323394BD200EABABD /* bookmarker for pinboard Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookmarker for pinboard Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8D776523394BD200EABABD /* PinboardApiResponseParser_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardApiResponseParser_Tests.swift; sourceTree = "<group>"; };
+		6D8D776723394BD200EABABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8D776D23394D6E00EABABD /* PinboardApiResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardApiResponseParser.swift; sourceTree = "<group>"; };
 		6D9F4A3721EB4CB5003A7BC7 /* ApiTokenCreateOrUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTokenCreateOrUpdateResponse.swift; sourceTree = "<group>"; };
 		6D9F4A3921EB530B003A7BC7 /* KeychainApiTokenAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainApiTokenAccess.swift; sourceTree = "<group>"; };
 		6D9F4A4121EB8A7C003A7BC7 /* CommonKeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonKeychainAccess.swift; sourceTree = "<group>"; };
@@ -117,25 +108,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D59F42021D8FF5900143454 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D59F42B21D8FF5900143454 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D59F43621D8FF5900143454 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6D59F43F21D8FF5900143454 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8D776023394BD200EABABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				6D59F41221D8FF5700143454 /* bookmarker for pinboard */,
-				6D59F42621D8FF5900143454 /* bookmarker for pinboard IntegrationTests */,
-				6D59F43121D8FF5900143454 /* bookmarker for pinboard IntegrationUITests */,
 				6D59F44021D8FF5900143454 /* bookmarker for pinboard extension */,
+				6D8D776423394BD200EABABD /* bookmarker for pinboard Tests */,
 				6D59F43D21D8FF5900143454 /* Frameworks */,
 				6D59F41121D8FF5700143454 /* Products */,
 			);
@@ -158,9 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				6D59F41021D8FF5700143454 /* bookmarker for pinboard.app */,
-				6D59F42321D8FF5900143454 /* bookmarker for pinboardTests.xctest */,
-				6D59F42E21D8FF5900143454 /* bookmarker for pinboardUITests.xctest */,
 				6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */,
+				6D8D776323394BD200EABABD /* bookmarker for pinboard Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,24 +164,6 @@
 				6DB98D992250C406005B1E0C /* CommonUserDefaults.swift */,
 			);
 			path = "bookmarker for pinboard";
-			sourceTree = "<group>";
-		};
-		6D59F42621D8FF5900143454 /* bookmarker for pinboard IntegrationTests */ = {
-			isa = PBXGroup;
-			children = (
-				6D59F42721D8FF5900143454 /* Pinboard_IntegrationTests.swift */,
-				6D59F42921D8FF5900143454 /* Info.plist */,
-			);
-			path = "bookmarker for pinboard IntegrationTests";
-			sourceTree = "<group>";
-		};
-		6D59F43121D8FF5900143454 /* bookmarker for pinboard IntegrationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D59F43221D8FF5900143454 /* Pinboard_IntegrationUITests.swift */,
-				6D59F43421D8FF5900143454 /* Info.plist */,
-			);
-			path = "bookmarker for pinboard IntegrationUITests";
 			sourceTree = "<group>";
 		};
 		6D59F43D21D8FF5900143454 /* Frameworks */ = {
@@ -224,8 +188,18 @@
 				6DEF337C21DCE01D00123E74 /* PinboardApiResponse.swift */,
 				6D14370521DE3E340025FE25 /* PinboardUrl.swift */,
 				6D02EE6D228B248F0082B349 /* script.js */,
+				6D8D776D23394D6E00EABABD /* PinboardApiResponseParser.swift */,
 			);
 			path = "bookmarker for pinboard extension";
+			sourceTree = "<group>";
+		};
+		6D8D776423394BD200EABABD /* bookmarker for pinboard Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6D8D776523394BD200EABABD /* PinboardApiResponseParser_Tests.swift */,
+				6D8D776723394BD200EABABD /* Info.plist */,
+			);
+			path = "bookmarker for pinboard Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,42 +224,6 @@
 			productReference = 6D59F41021D8FF5700143454 /* bookmarker for pinboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6D59F42221D8FF5900143454 /* bookmarker for pinboardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6D59F45721D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardTests" */;
-			buildPhases = (
-				6D59F41F21D8FF5900143454 /* Sources */,
-				6D59F42021D8FF5900143454 /* Frameworks */,
-				6D59F42121D8FF5900143454 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6D59F42521D8FF5900143454 /* PBXTargetDependency */,
-			);
-			name = "bookmarker for pinboardTests";
-			productName = "Pinboard IntegrationTests";
-			productReference = 6D59F42321D8FF5900143454 /* bookmarker for pinboardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		6D59F42D21D8FF5900143454 /* bookmarker for pinboardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6D59F45A21D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardUITests" */;
-			buildPhases = (
-				6D59F42A21D8FF5900143454 /* Sources */,
-				6D59F42B21D8FF5900143454 /* Frameworks */,
-				6D59F42C21D8FF5900143454 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6D59F43021D8FF5900143454 /* PBXTargetDependency */,
-			);
-			name = "bookmarker for pinboardUITests";
-			productName = "Pinboard IntegrationUITests";
-			productReference = 6D59F42E21D8FF5900143454 /* bookmarker for pinboardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		6D59F43821D8FF5900143454 /* bookmarker for pinboard Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D59F45021D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboard Extension" */;
@@ -303,13 +241,31 @@
 			productReference = 6D59F43921D8FF5900143454 /* bookmarker for pinboard Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		6D8D776223394BD200EABABD /* bookmarker for pinboard Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8D776C23394BD200EABABD /* Build configuration list for PBXNativeTarget "bookmarker for pinboard Tests" */;
+			buildPhases = (
+				6D8D775F23394BD200EABABD /* Sources */,
+				6D8D776023394BD200EABABD /* Frameworks */,
+				6D8D776123394BD200EABABD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8D776923394BD200EABABD /* PBXTargetDependency */,
+			);
+			name = "bookmarker for pinboard Tests";
+			productName = "bookmarker for pinboard Tests";
+			productReference = 6D8D776323394BD200EABABD /* bookmarker for pinboard Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6D59F40821D8FF5700143454 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Kristof Adriaenssens";
 				TargetAttributes = {
@@ -324,14 +280,6 @@
 							};
 						};
 					};
-					6D59F42221D8FF5900143454 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 6D59F40F21D8FF5700143454;
-					};
-					6D59F42D21D8FF5900143454 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 6D59F40F21D8FF5700143454;
-					};
 					6D59F43821D8FF5900143454 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -345,6 +293,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					6D8D776223394BD200EABABD = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 6D59F40F21D8FF5700143454;
 					};
 				};
 			};
@@ -362,9 +314,8 @@
 			projectRoot = "";
 			targets = (
 				6D59F40F21D8FF5700143454 /* bookmarker for pinboard */,
-				6D59F42221D8FF5900143454 /* bookmarker for pinboardTests */,
-				6D59F42D21D8FF5900143454 /* bookmarker for pinboardUITests */,
 				6D59F43821D8FF5900143454 /* bookmarker for pinboard Extension */,
+				6D8D776223394BD200EABABD /* bookmarker for pinboard Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -380,20 +331,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D59F42121D8FF5900143454 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D59F42C21D8FF5900143454 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D59F43721D8FF5900143454 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +339,13 @@
 				6D02EE6E228B248F0082B349 /* script.js in Resources */,
 				6D59F44C21D8FF5900143454 /* ToolbarItemIcon.pdf in Resources */,
 				6D59F44721D8FF5900143454 /* SafariExtensionViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8D776123394BD200EABABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,26 +367,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D59F41F21D8FF5900143454 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6D59F42821D8FF5900143454 /* Pinboard_IntegrationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D59F42A21D8FF5900143454 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6D59F43321D8FF5900143454 /* Pinboard_IntegrationUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D59F43521D8FF5900143454 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8D776F23394E2800EABABD /* PinboardApiResponseParser.swift in Sources */,
 				6DEF337921DCD33800123E74 /* PinboardApi.swift in Sources */,
 				6DEF337D21DCE01D00123E74 /* PinboardApiResponse.swift in Sources */,
 				6D59F44421D8FF5900143454 /* SafariExtensionViewController.swift in Sources */,
@@ -454,23 +383,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D8D775F23394BD200EABABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8D776623394BD200EABABD /* PinboardApiResponseParser_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6D59F42521D8FF5900143454 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D59F40F21D8FF5700143454 /* bookmarker for pinboard */;
-			targetProxy = 6D59F42421D8FF5900143454 /* PBXContainerItemProxy */;
-		};
-		6D59F43021D8FF5900143454 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D59F40F21D8FF5700143454 /* bookmarker for pinboard */;
-			targetProxy = 6D59F42F21D8FF5900143454 /* PBXContainerItemProxy */;
-		};
 		6D59F43C21D8FF5900143454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6D59F43821D8FF5900143454 /* bookmarker for pinboard Extension */;
 			targetProxy = 6D59F43B21D8FF5900143454 /* PBXContainerItemProxy */;
+		};
+		6D8D776923394BD200EABABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D59F40F21D8FF5700143454 /* bookmarker for pinboard */;
+			targetProxy = 6D8D776823394BD200EABABD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -703,81 +635,45 @@
 			};
 			name = Release;
 		};
-		6D59F45821D8FF5900143454 /* Debug */ = {
+		6D8D776A23394BD200EABABD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Pinboard IntegrationTests/Info.plist";
+				DEVELOPMENT_TEAM = LFASJ6UBQ7;
+				INFOPLIST_FILE = "bookmarker for pinboard Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.Pinboard-IntegrationTests";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.bookmarker-for-pinboard-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookmarker for pinboard.app/Contents/MacOS/bookmarker for pinboard";
 			};
 			name = Debug;
 		};
-		6D59F45921D8FF5900143454 /* Release */ = {
+		6D8D776B23394BD200EABABD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Pinboard IntegrationTests/Info.plist";
+				DEVELOPMENT_TEAM = LFASJ6UBQ7;
+				INFOPLIST_FILE = "bookmarker for pinboard Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.Pinboard-IntegrationTests";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.bookmarker-for-pinboard-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookmarker for pinboard.app/Contents/MacOS/bookmarker for pinboard";
-			};
-			name = Release;
-		};
-		6D59F45B21D8FF5900143454 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Pinboard IntegrationUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.Pinboard-IntegrationUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TEST_TARGET_NAME = "Pinboard Integration";
-			};
-			name = Debug;
-		};
-		6D59F45C21D8FF5900143454 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Pinboard IntegrationUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kristofa.Pinboard-IntegrationUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TEST_TARGET_NAME = "Pinboard Integration";
 			};
 			name = Release;
 		};
@@ -811,20 +707,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D59F45721D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardTests" */ = {
+		6D8D776C23394BD200EABABD /* Build configuration list for PBXNativeTarget "bookmarker for pinboard Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D59F45821D8FF5900143454 /* Debug */,
-				6D59F45921D8FF5900143454 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6D59F45A21D8FF5900143454 /* Build configuration list for PBXNativeTarget "bookmarker for pinboardUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6D59F45B21D8FF5900143454 /* Debug */,
-				6D59F45C21D8FF5900143454 /* Release */,
+				6D8D776A23394BD200EABABD /* Debug */,
+				6D8D776B23394BD200EABABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
