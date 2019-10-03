@@ -1,6 +1,6 @@
 import Foundation
 
-enum PinboardApiResponse {
+enum PinboardApiResponseNoPayload {
     case Succes
     case Error(String)
 }

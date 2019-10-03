@@ -70,12 +70,8 @@ class ViewController: NSViewController {
         switch (apiTokenResponse) {
             case .Success(_) :
                 updateApiTokenSetTextFieldValueSuccess(message: "API token set.")
-            case .ErrorApiTokenItemNotFound :
-                updateApiTokenSetTextFieldValueFailure(message: "API token not set.")
-            case .ErrorUnexpectedApiTokenData :
-                updateApiTokenSetTextFieldValueFailure(message: "API token data is invalid. Update API token.")
-            case .ErrorUnknown(let osStatus) :
-                updateApiTokenSetTextFieldValueFailure(message: "Unknown error when getting API token. OSStatus \(osStatus). Update API token.")
+            case .Error(let message) :
+                updateApiTokenSetTextFieldValueFailure(message: message)
         }
         
         if let readLater = userDefaults.getReadLater() {

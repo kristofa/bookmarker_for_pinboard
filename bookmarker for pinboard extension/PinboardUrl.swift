@@ -8,4 +8,5 @@ struct PinboardUrl {
     let isPrivate: Bool
     let readLater: Bool
     let tags: String
+    let date: String
 }

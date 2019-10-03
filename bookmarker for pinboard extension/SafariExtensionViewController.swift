@@ -45,26 +45,17 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
         let response = apiTokenAccess.getApiToken()
         
         switch(response) {
-        case .ErrorApiTokenItemNotFound:
-            let message = "Can't find API token in keychain. Set it using application."
-            self.updateStatusTextFieldFailure(message: message)
-            return
-        case .ErrorUnexpectedApiTokenData:
-            let message = "Invalid data for API key in keychain. Manually remove it from keychain."
-            self.updateStatusTextFieldFailure(message: message)
-            return
-        case .ErrorUnknown(let status):
-            let message = "Unknown error when getting API key from keychain. OSStatus: \(status)"
-            self.updateStatusTextFieldFailure(message: message )
-            return
-        case .Success(let token):
-            NSLog("Getting API token from keychain successful")
-            apiTokenFromKeychain = token
+            case .Error(let message):
+                self.updateStatusTextFieldFailure(message: message)
+                return
+            case .Success(let token):
+                NSLog("Getting API token from keychain successful")
+                apiTokenFromKeychain = token
         }
         
-        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue)
+        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue, date: "")
         
-        pinboardApi.submit(apiToken: apiTokenFromKeychain, pinboardUrl: pinboardUrl) {
+        pinboardApi.add(apiToken: apiTokenFromKeychain, pinboardUrl: pinboardUrl) {
             (url, response) in
             switch response {
             case .Succes:
@@ -76,18 +67,18 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                 self.updateStatusTextFieldFailure(message: value)
             }
         }
-
     }
+    
     
     private func buttonStateToBool(value: NSControl.StateValue) -> Bool {
         return value == NSControl.StateValue.on ? true : false
     }
     
-    private func updateStatusTextFieldSuccess(message: String) -> Void {
-        updateTextAndColorOfStatusField(value: message, color: NSColor.systemGreen)
+    public func updateStatusTextFieldSuccess(message: String) -> Void {
+        updateTextAndColorOfStatusField(value: message, color: NSColor.systemBlue)
     }
     
-    private func updateStatusTextFieldFailure(message: String) -> Void {
+    public func updateStatusTextFieldFailure(message: String) -> Void {
         updateTextAndColorOfStatusField(value: message, color: NSColor.systemRed)
     }
     

@@ -11,16 +11,16 @@ class CommonKeychainAccess {
         
         switch status  {
         case errSecItemNotFound:
-            return ApiTokenGetResponse.ErrorApiTokenItemNotFound
+            return ApiTokenGetResponse.Error("API token not set.")
         case errSecSuccess:
             guard let existingItem = item as? [String : Any],
                 let apiTokenData = existingItem[kSecValueData as String] as? Data,
                 let apiToken = String(data: apiTokenData, encoding: String.Encoding.utf8) else {
-                    return ApiTokenGetResponse.ErrorUnexpectedApiTokenData
+                    return ApiTokenGetResponse.Error("API token data is invalid. Update API token.")
             }
             return ApiTokenGetResponse.Success(apiToken)
         default:
-            return ApiTokenGetResponse.ErrorUnknown(status)
+            return ApiTokenGetResponse.Error("Unknown error when getting API token from keychain. OSStatus: \(status)")
         }
     }
     
