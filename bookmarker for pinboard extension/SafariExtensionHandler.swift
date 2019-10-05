@@ -29,7 +29,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             default :
                 NSLog("Received unsupported message: \(messageName)")
         }
-        
     }
     
     override func toolbarItemClicked(in window: SFSafariWindow) {
@@ -74,7 +73,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                                         if (firstUrl.description.isEmpty) {
                                            activePage?.dispatchMessageToScript(withName: "getSelectedText", userInfo: nil)
                                         }
-                                        SafariExtensionViewController.shared.updateStatusTextFieldSuccess(message: "Already added earlier. Initially added: \(firstUrl.date)")
+                                        let sinceWhen = self.readableIntervalSinceNow(dateAsString: firstUrl.date)
+                                        SafariExtensionViewController.shared.updateStatusTextFieldSuccess(message: "URL already bookmarked, updating existing entry.\nInitially added \(sinceWhen)")
                                     }
                                 case .Error(let message):
                                     self.clearAllUrlProperties(); SafariExtensionViewController.shared.updateStatusTextFieldFailure(message: message)
@@ -87,8 +87,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 }
             }
         }
-        
-       
     }
     
     private func getApiToken() -> Optional<String> {
@@ -101,6 +99,32 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             case .Success(let token):
                 return Optional.some(token)
         }
+    }
+    
+    private func readableIntervalSinceNow(dateAsString: String) -> String {
+        let formatter = ISO8601DateFormatter();
+        if let date = formatter.date(from: dateAsString) {
+            
+            let timeInterval = date.timeIntervalSinceNow
+            if (timeInterval > -3600) { // less than 1 hour
+                return "just now."
+            } else if (timeInterval > -86400) { // less than a day
+                let hours = abs(timeInterval / 3600)
+                return "\(String(format: "%.0f", hours)) hours ago."
+                //String(format: "%.f", hours)
+            } else if (timeInterval > (-604800 * 4)) { // less than a months
+                let days = abs(timeInterval / 86400)
+                return "\(String(format: "%.0f", days)) days ago."
+            } else if (timeInterval > (-604800 * 4 * 3)) { // less than 3 months
+                let weeks = abs(timeInterval / 604800)
+                return "\(String(format: "%.0f", weeks)) weeks ago."
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.setLocalizedDateFormatFromTemplate("MMMM YYYY")
+                return "\(dateFormatter.string(from: date))."
+            }
+        }
+        return dateAsString
     }
     
     private func setDefaultValuesForReadLaterAndPrivateCheckboxes() {
