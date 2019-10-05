@@ -81,8 +81,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                                     
                             }
                         }
-                    } else {
-                        self.clearAllUrlProperties()
                     }
                 }
             }
