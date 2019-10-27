@@ -27,7 +27,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             return
         }
             
-        var urlRequest = URLRequest(url: url, timeoutInterval: 1.0)
+        var urlRequest = URLRequest(url: url, timeoutInterval: 2.0)
         urlRequest.httpMethod = "GET"
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -76,7 +76,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             return
         }
             
-        var urlRequest = URLRequest(url: url, timeoutInterval: 1.0)
+        var urlRequest = URLRequest(url: url, timeoutInterval: 3.0)
         urlRequest.httpMethod = "GET"
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
