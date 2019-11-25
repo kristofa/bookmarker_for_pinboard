@@ -56,17 +56,18 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                     pageProperties in
                     
                     if let apiToken = self.getApiToken(), let url = pageProperties?.url, let title = pageProperties?.title  {
+                        
+                        // Trigger getting selected page text so  description field can get populated
+                        activePage?.dispatchMessageToScript(withName: "getSelectedText", userInfo: nil)
+                        self.setUrlPropertiesExceptDescription(urlValue: url.absoluteString, titleValue: title)
+                        self.setDefaultValuesForReadLaterAndPrivateCheckboxes()
+                        
                         SafariExtensionViewController.shared.pinboardApi.get(apiToken: apiToken, inputUrl: url.absoluteString) {
                             
                             (url, existingEntries) in
                             switch (existingEntries) {
                                 case .Succes(let pinboardUrls):
-                                    if (pinboardUrls.isEmpty) {
-                                        // Trigger getting selected page text so  description field can get populated
-                                        activePage?.dispatchMessageToScript(withName: "getSelectedText", userInfo: nil)
-                                        self.setUrlPropertiesExceptDescription(urlValue: url, titleValue: title)
-                                    self.setDefaultValuesForReadLaterAndPrivateCheckboxes()
-                                    } else {
+                                    if (pinboardUrls.count > 0) {
                                         let firstUrl = pinboardUrls[0]
                                         self.setUrlProperties(urlValue: url, titleValue: firstUrl.title, descriptionValue: firstUrl.description, tagsValue: firstUrl.tags, isPrivate: firstUrl.isPrivate, readLater: firstUrl.readLater)
                                        
