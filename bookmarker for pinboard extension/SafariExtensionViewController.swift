@@ -75,7 +75,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     }
     
     public func updateStatusTextFieldSuccess(message: String) -> Void {
-        updateTextAndColorOfStatusField(value: message, color: NSColor.systemBlue)
+        updateTextAndColorOfStatusField(value: message, color: NSColor.systemGray)
     }
     
     public func updateStatusTextFieldFailure(message: String) -> Void {
