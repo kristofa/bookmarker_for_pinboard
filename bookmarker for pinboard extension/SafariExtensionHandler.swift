@@ -77,8 +77,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                                         let sinceWhen = self.readableIntervalSinceNow(dateAsString: firstUrl.date)
                                         SafariExtensionViewController.shared.updateStatusTextFieldSuccess(message: "URL already bookmarked, updating existing entry.\nInitially added \(sinceWhen)")
                                     }
-                                case .Error(let message):
-                                    self.clearAllUrlProperties(); SafariExtensionViewController.shared.updateStatusTextFieldFailure(message: message)
+                                case .Error(let message):                                SafariExtensionViewController.shared.updateStatusTextFieldFailure(message: message)
                                     
                             }
                         }
