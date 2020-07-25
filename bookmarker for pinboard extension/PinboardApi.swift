@@ -5,7 +5,8 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
     
     private static let pinboardAddPostUrl = URL(string: "https://api.pinboard.in/v1/posts/add")!
     private static let pinboardGetPostsUrl = URL(string: "https://api.pinboard.in/v1/posts/get")!
-    
+    private static let getUrlErrorPrefix = "When retrieving previously saved bookmark: "
+    private static let addUrlErrorPrefix = "When adding or updating bookmark: "
     
     func add(apiToken: String, pinboardUrl: PinboardUrl, completionHandler: @escaping (PinboardUrl, PinboardApiResponseNoPayload) -> Void) -> Void {
         
@@ -23,7 +24,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
                 URLQueryItem.init(name: "shared", value: boolToString(value: !pinboardUrl.isPrivate)),
                 URLQueryItem.init(name: "toread", value: boolToString(value: pinboardUrl.readLater)),
                 URLQueryItem.init(name: "format", value: "json")] ) else {
-            completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error("Unable to create pinboard url"))
+                    completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error(PinboardApi.addUrlErrorPrefix + "Unable to create pinboard url"))
             return
         }
             
@@ -37,7 +38,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             (data, response, error) in
             
                 guard error == nil else {
-                    completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error("Got an error when invoking request to api.pinboard.in: \(error!.localizedDescription)"))
+                    completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error(PinboardApi.addUrlErrorPrefix + "Got an error when invoking request to api.pinboard.in: \(error!.localizedDescription)"))
                     return
                 }
                 
@@ -49,13 +50,13 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
                             let responseToReturn = PinboardApiResponseParser.parseDefaultResponse(body: data ?? Data())
                             completionHandler(pinboardUrl, responseToReturn)
                         case 401 :
-                            completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error("Got 'Forbidden' response. The configured API Token is probably invalid."))
+                            completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error(PinboardApi.addUrlErrorPrefix + "Got 'Forbidden' response. The configured API Token is probably invalid."))
                         default :
-                            completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error("Got an unexpected status code from api.pinboard.in: code: \(response.statusCode), response body: \(responseDataAsString)"))
+                            completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error(PinboardApi.addUrlErrorPrefix + "Got an unexpected status code from api.pinboard.in: code: \(response.statusCode), response body: \(responseDataAsString)"))
                     }
                     
                 } else {
-                    completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error("Got an unexpected response when invoking request to api.pinboard.in. Can't validate success. Response data: \(responseDataAsString)"))
+                    completionHandler(pinboardUrl, PinboardApiResponseNoPayload.Error(PinboardApi.addUrlErrorPrefix + "Got an unexpected response when invoking request to api.pinboard.in. Can't validate success. Response data: \(responseDataAsString)"))
                     return
                 }
         }
@@ -72,7 +73,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
                 URLQueryItem.init(name: "auth_token", value: apiToken),
                 URLQueryItem.init(name: "format", value: "json")] ) else {
             
-                    completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error("Unable to create pinboard url"))
+                    completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error(PinboardApi.getUrlErrorPrefix + "Unable to create pinboard url"))
             return
         }
             
@@ -85,7 +86,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             (data, response, error) in
             
                 guard error == nil else {
-                    completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error("Got an error when invoking request to api.pinboard.in: \(error!.localizedDescription)"))
+                    completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error(PinboardApi.getUrlErrorPrefix + "Got an error when invoking request to api.pinboard.in: \(error!.localizedDescription)"))
                     return
                 }
                 
@@ -96,12 +97,12 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
                             let responseToReturn = PinboardApiResponseParser.parseExistingUrlEntries(body: data ?? Data())
                             completionHandler(inputUrl, responseToReturn)
                         case 401 :
-                            completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error("Got 'Forbidden' response. The configured API Token is probably invalid."))
+                            completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error(PinboardApi.getUrlErrorPrefix + "Got 'Forbidden' response. The configured API Token is probably invalid."))
                         default :
-                            completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error("Got an unexpected status code from api.pinboard.in: code: \(response.statusCode), response body: \(responseDataAsString)"))
+                            completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error(PinboardApi.getUrlErrorPrefix + "Got an unexpected status code from api.pinboard.in: code: \(response.statusCode), response body: \(responseDataAsString)"))
                     }
                 } else {
-                    completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error("Got an unexpected response when invoking request to api.pinboard.in. Can't validate success. Response data: \(responseDataAsString)"))
+                    completionHandler(inputUrl, PinboardApiResponseExistingUrlEntries.Error(PinboardApi.getUrlErrorPrefix + "Got an unexpected response when invoking request to api.pinboard.in. Can't validate success. Response data: \(responseDataAsString)"))
                     return
                 }
         }
