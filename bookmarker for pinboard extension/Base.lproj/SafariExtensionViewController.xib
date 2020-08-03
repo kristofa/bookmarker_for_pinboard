@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
                 <outlet property="privateCheckbox" destination="i5S-Cp-9FM" id="biw-il-WRp"/>
                 <outlet property="readLaterCheckbox" destination="bvU-OC-yr7" id="CCU-UY-JFQ"/>
                 <outlet property="statusTextView" destination="dq9-1J-1dv" id="0G3-GD-Raz"/>
-                <outlet property="tagsTextField" destination="cLy-B4-2Kd" id="Pqu-KS-X2R"/>
+                <outlet property="tagsTextView" destination="KLz-oT-use" id="vU9-8m-ZbO"/>
                 <outlet property="titleTextField" destination="NaV-a3-Zko" id="qCG-Fl-9kv"/>
                 <outlet property="urlTextField" destination="X1s-ox-q2G" id="kry-SD-Wm5"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vwT-Xx-Aiz"/>
@@ -56,7 +56,7 @@
                     </textFieldCell>
                 </textField>
                 <textField identifier="titleTextField" toolTip="Title of URL you want to save" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-a3-Zko">
-                    <rect key="frame" x="16" y="227" width="302" height="22"/>
+                    <rect key="frame" x="16" y="228" width="302" height="21"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="eKS-es-a9A">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -67,11 +67,13 @@
                     </connections>
                 </textField>
                 <textField identifier="descriptionTextField" toolTip="Description of URL you want to save" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="tH0-3P-99u">
-                    <rect key="frame" x="16" y="162" width="302" height="52"/>
+                    <rect key="frame" x="16" y="163" width="302" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="Mvc-Mc-iGD"/>
                         <constraint firstAttribute="width" secondItem="tH0-3P-99u" secondAttribute="height" multiplier="9:2" constant="68" id="QVa-hQ-m9R"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="lOo-MZ-UyC"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="234" id="rtU-V5-ajh"/>
+                        <constraint firstAttribute="width" constant="302" id="vpR-6L-9zB"/>
                     </constraints>
                     <textFieldCell key="cell" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="ThG-VG-H8K">
                         <font key="font" metaFont="system"/>
@@ -82,21 +84,37 @@
                         <action selector="descriptionTextFieldAction:" target="-2" id="v13-P0-GuN"/>
                     </connections>
                 </textField>
-                <textField toolTip="Tags for URL separated by spaces or comma's" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cLy-B4-2Kd">
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN2-OC-8eT">
                     <rect key="frame" x="16" y="127" width="302" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="302" id="Vbf-aY-o6m"/>
-                        <constraint firstAttribute="height" constant="22" id="ide-Et-rTv"/>
-                    </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Tags" drawsBackground="YES" id="CKw-kb-S9c">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                    <clipView key="contentView" copiesOnScroll="NO" id="CsB-vl-gDe">
+                        <rect key="frame" x="1" y="1" width="300" height="20"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" selectionGranularity="word" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="KLz-oT-use">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="300" height="20"/>
+                                <size key="maxSize" width="302" height="10000000"/>
+                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <connections>
-                            <action selector="tagsTextFieldAction:" target="-2" id="VyA-LS-Itn"/>
-                        </connections>
-                    </textFieldCell>
-                </textField>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="302" id="dL0-zL-zn2"/>
+                        <constraint firstAttribute="height" constant="22" id="tkm-xK-VCI"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="3ir-XN-g2o">
+                        <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2SR-lk-e1B">
+                        <rect key="frame" x="-100" y="-100" width="16" height="22"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
                 <button identifier="privateCheckbox" toolTip="Indicates if the URL can be shared publicly or not" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-Cp-9FM">
                     <rect key="frame" x="14" y="69" width="64" height="18"/>
                     <constraints>
@@ -175,32 +193,34 @@
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="148" id="9La-IX-CeZ"/>
                 <constraint firstItem="bvU-OC-yr7" firstAttribute="leading" secondItem="i5S-Cp-9FM" secondAttribute="leading" id="9f0-Bf-S8c"/>
                 <constraint firstItem="X1s-ox-q2G" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Cyx-9V-xVv"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="leading" secondItem="tH0-3P-99u" secondAttribute="leading" id="FgA-iD-P0S"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="top" secondItem="X1s-ox-q2G" secondAttribute="bottom" constant="15" id="G2Q-T3-XYK"/>
                 <constraint firstItem="ASc-sr-bO9" firstAttribute="top" secondItem="4Iy-aV-wGF" secondAttribute="bottom" constant="20" id="GDv-xz-Uwo"/>
+                <constraint firstItem="tH0-3P-99u" firstAttribute="top" secondItem="NaV-a3-Zko" secondAttribute="bottom" constant="13" id="IFP-yN-OoC"/>
+                <constraint firstItem="ZN2-OC-8eT" firstAttribute="top" secondItem="tH0-3P-99u" secondAttribute="bottom" constant="14" id="KaW-fU-MA9"/>
                 <constraint firstItem="i5S-Cp-9FM" firstAttribute="top" secondItem="bvU-OC-yr7" secondAttribute="bottom" constant="12" id="LMQ-mq-4Js"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cLy-B4-2Kd" secondAttribute="trailing" constant="20" id="NCT-Ij-uPU"/>
+                <constraint firstItem="bvU-OC-yr7" firstAttribute="top" secondItem="ZN2-OC-8eT" secondAttribute="bottom" constant="16" id="NKg-nb-Xcg"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="trailing" constant="20" id="OSZ-XY-VRz"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="leading" secondItem="X1s-ox-q2G" secondAttribute="leading" id="Oou-RV-DxI"/>
+                <constraint firstItem="ZN2-OC-8eT" firstAttribute="top" secondItem="tH0-3P-99u" secondAttribute="bottom" constant="14" id="Qjh-9Z-iho"/>
                 <constraint firstItem="ewh-WU-08f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Rs1-1z-2vM"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bvU-OC-yr7" secondAttribute="trailing" constant="238" id="S1u-T2-dBT"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X1s-ox-q2G" secondAttribute="trailing" constant="20" id="SQp-Pu-AYT"/>
                 <constraint firstItem="i5S-Cp-9FM" firstAttribute="leading" secondItem="ewh-WU-08f" secondAttribute="leading" id="W4X-6l-TPV"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="trailing" secondItem="X1s-ox-q2G" secondAttribute="trailing" id="WfB-k2-D7D"/>
+                <constraint firstItem="ZN2-OC-8eT" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Yhe-j0-VdG"/>
                 <constraint firstItem="ASc-sr-bO9" firstAttribute="leading" secondItem="X1s-ox-q2G" secondAttribute="leading" id="YpM-UI-ifJ"/>
                 <constraint firstItem="ASc-sr-bO9" firstAttribute="trailing" secondItem="X1s-ox-q2G" secondAttribute="trailing" id="bSY-YQ-jjx"/>
+                <constraint firstItem="tH0-3P-99u" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="fwi-Lo-Gv4"/>
                 <constraint firstAttribute="trailing" secondItem="ewh-WU-08f" secondAttribute="trailing" constant="205" id="hwX-Uf-IWv"/>
                 <constraint firstItem="X1s-ox-q2G" firstAttribute="top" secondItem="ASc-sr-bO9" secondAttribute="bottom" constant="13" id="iMM-kG-aPD"/>
                 <constraint firstAttribute="bottom" secondItem="ewh-WU-08f" secondAttribute="bottom" constant="31" id="j7c-Az-iyD"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="bottom" constant="12" id="jBy-fI-FKe"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Iy-aV-wGF" secondAttribute="trailing" constant="202" id="jTz-d4-03p"/>
                 <constraint firstItem="ewh-WU-08f" firstAttribute="top" secondItem="i5S-Cp-9FM" secondAttribute="bottom" constant="19" id="k0V-qR-m3n"/>
-                <constraint firstItem="bvU-OC-yr7" firstAttribute="top" secondItem="cLy-B4-2Kd" secondAttribute="bottom" constant="16" id="lJD-l7-yvE"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="lNF-NR-Eyj"/>
+                <constraint firstAttribute="trailing" secondItem="ZN2-OC-8eT" secondAttribute="trailing" constant="20" id="lYh-uz-yIL"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="5" id="lvb-dV-Nad"/>
                 <constraint firstItem="i5S-Cp-9FM" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="ne2-jd-ovA"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="rBn-MU-QGl"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="leading" secondItem="bvU-OC-yr7" secondAttribute="leading" id="yk1-zy-Vvs"/>
+                <constraint firstAttribute="trailing" secondItem="tH0-3P-99u" secondAttribute="trailing" constant="20" id="pwc-Ah-8sh"/>
             </constraints>
             <point key="canvasLocation" x="107" y="252.5"/>
         </customView>

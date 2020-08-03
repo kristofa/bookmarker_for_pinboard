@@ -48,7 +48,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         
         clearStatusMessage()
         clearAllUrlProperties()
-    SafariExtensionViewController.shared.addToPinboardPopup.window?.makeFirstResponder(SafariExtensionViewController.shared.tagsTextField)
+    SafariExtensionViewController.shared.addToPinboardPopup.window?.makeFirstResponder(SafariExtensionViewController.shared.tagsTextView)
         
         window.getActiveTab {
             activeTab in activeTab?.getActivePage {
@@ -151,7 +151,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             DispatchQueue.main.async {
                 SafariExtensionViewController.shared.urlTextField.stringValue = urlValue
                 SafariExtensionViewController.shared.titleTextField.stringValue = titleValue
-                SafariExtensionViewController.shared.tagsTextField.stringValue = tagsValue
+                SafariExtensionViewController.shared.tagsTextView.string = tagsValue
             }
     }
     
@@ -160,7 +160,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 SafariExtensionViewController.shared.urlTextField.stringValue = urlValue
                 SafariExtensionViewController.shared.titleTextField.stringValue = titleValue
                 SafariExtensionViewController.shared.descriptionTextField.stringValue = descriptionValue
-                SafariExtensionViewController.shared.tagsTextField.stringValue = tagsValue
+                SafariExtensionViewController.shared.tagsTextView.string = tagsValue
                 
                 if (isPrivate) {
                     SafariExtensionViewController.shared.privateCheckbox.state = NSControl.StateValue.on
@@ -181,7 +181,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             SafariExtensionViewController.shared.urlTextField.stringValue = ""
             SafariExtensionViewController.shared.titleTextField.stringValue = ""
             SafariExtensionViewController.shared.descriptionTextField.stringValue = ""
-            SafariExtensionViewController.shared.tagsTextField.stringValue = ""
+            SafariExtensionViewController.shared.tagsTextView.string = ""
         }
     }
     

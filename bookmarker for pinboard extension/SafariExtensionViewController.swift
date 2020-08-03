@@ -16,7 +16,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     @IBOutlet weak var descriptionTextField: NSTextField!
     @IBOutlet weak var urlTextField: NSTextField!
     @IBOutlet weak var titleTextField: NSTextField!
-    @IBOutlet weak var tagsTextField: NSTextField!
+    @IBOutlet var tagsTextView: NSTextView!
     @IBOutlet weak var readLaterCheckbox: NSButton!
     @IBOutlet weak var privateCheckbox: NSButton!
     
@@ -53,7 +53,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                 apiTokenFromKeychain = token
         }
         
-        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextField.stringValue, date: "")
+        let pinboardUrl = PinboardUrl(url: urlTextField.stringValue, title: titleTextField.stringValue, description: descriptionTextField.stringValue, isPrivate: buttonStateToBool(value: privateCheckbox.state), readLater: buttonStateToBool(value: readLaterCheckbox.state), tags: tagsTextView.string, date: "")
         
         pinboardApi.add(apiToken: apiTokenFromKeychain, pinboardUrl: pinboardUrl) {
             (url, response) in
