@@ -85,4 +85,19 @@ class PinboardApiResponseParser {
             return PinboardApiResponseExistingUrlEntries.Error("Error when parsing result of looking up URL: \(error)")
         }
     }
+    
+    static func parseTags(body: Data) -> PinboardTagsResponse {
+        do {
+            let json = try JSONSerialization.jsonObject(with: body, options: [])
+            var tagArray = [PinboardWeightedTag]()
+            if let dictionary = json as? [String: Int] {
+                for (key, value) in dictionary {
+                    tagArray.append(PinboardWeightedTag(tagName: key, tagCount: value))
+                }
+            }
+            return PinboardTagsResponse.Success(tagArray)
+        } catch let error {
+            return PinboardTagsResponse.Error("Error when parsing tags as returned by the api:  \(error)")
+        }
+    }
 }
