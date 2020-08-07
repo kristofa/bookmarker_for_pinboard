@@ -48,6 +48,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         
         clearStatusMessage()
         clearAllUrlProperties()
+        
     SafariExtensionViewController.shared.addToPinboardPopup.window?.makeFirstResponder(SafariExtensionViewController.shared.tagsTextField)
         
         window.getActiveTab {

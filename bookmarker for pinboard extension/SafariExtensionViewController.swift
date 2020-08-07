@@ -1,6 +1,6 @@
 import SafariServices
 
-class SafariExtensionViewController: SFSafariExtensionViewController {
+class SafariExtensionViewController: SFSafariExtensionViewController, NSTextFieldDelegate {
     
     static let shared: SafariExtensionViewController = {
         let shared = SafariExtensionViewController()
@@ -10,6 +10,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
     let pinboardApi = PinboardApi()
     let apiTokenAccess = CommonKeychainAccess()
+    var tags: [PinboardWeightedTag]?
     
     @IBOutlet weak var addToPinboardPopup: NSView!
     @IBOutlet var statusTextView: NSTextView!
@@ -38,6 +39,54 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     @IBAction func bookmarkButtonPressed(_ sender: Any) {
         saveBookMark()
+    }
+    
+    override func viewDidLoad() {
+        tagsTextField.delegate = self
+        
+        var apiTokenFromKeychain: String
+        let response = apiTokenAccess.getApiToken()
+        
+        switch(response) {
+            case .Error(let message):
+                self.updateStatusTextFieldFailure(message: message)
+                return
+            case .Success(let token):
+                NSLog("Getting API token from keychain successful")
+                apiTokenFromKeychain = token
+        }
+        
+        pinboardApi.getTags(apiToken: apiTokenFromKeychain) {
+            (response) in
+            
+            switch (response) {
+                case .Success(let tags):
+                    self.tags = tags.sorted().reversed()
+                case .Error(let error):
+                    self.updateStatusTextFieldFailure(message: error)
+            }
+        }
+    }
+    
+    func control(_ control: NSControl, textView: NSTextView, completions words: [String],
+                forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String] {
+    
+        let range = Range(charRange, in: textView.string)!
+        let substring = textView.string[range]
+        
+        index.initialize(to: -1)
+        // The substring.count condition below is important because when we select an item from the dropdown list, the text changes which triggers a 'complete' request which clears the dropdownlist again and we don't want that. So we only complete if the user has typed > 3 characters.
+        if (tags != nil && substring.count < 3) {
+            let filtered = self.tags!.filter { tag in return tag.tagName.starts(with: substring) }
+            return filtered.map { tag in return tag.tagName}
+        } else
+        {
+            return []
+        }
+    }
+    
+    func controlTextDidChange(_ obj: Notification) {
+        tagsTextField.currentEditor()?.complete(nil)
     }
     
     private func saveBookMark() -> Void {
