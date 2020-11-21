@@ -30,7 +30,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             return
         }
             
-        var urlRequest = URLRequest(url: url, timeoutInterval: 2.0)
+        var urlRequest = URLRequest(url: url, timeoutInterval: 7.0)
         urlRequest.httpMethod = "GET"
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -79,7 +79,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             return
         }
             
-        var urlRequest = URLRequest(url: url, timeoutInterval: 3.0)
+        var urlRequest = URLRequest(url: url, timeoutInterval: 7.0)
         urlRequest.httpMethod = "GET"
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -123,7 +123,7 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
             return
         }
             
-        var urlRequest = URLRequest(url: url, timeoutInterval: 3.0)
+        var urlRequest = URLRequest(url: url, timeoutInterval: 7.0)
         urlRequest.httpMethod = "GET"
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -168,7 +168,4 @@ class PinboardApi : NSObject, URLSessionDataDelegate {
     private func boolToString(value: Bool) -> String {
         return value == true ? "yes" : "no"
     }
-    
-    
 }
-
