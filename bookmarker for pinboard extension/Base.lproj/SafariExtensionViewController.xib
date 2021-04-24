@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,11 +27,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField toolTip="https://pinboard.in" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-aV-wGF">
-                    <rect key="frame" x="14" y="375" width="124" height="17"/>
+                    <rect key="frame" x="14" y="363" width="136" height="29"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="4Iy-aV-wGF" secondAttribute="height" multiplier="120:17" id="3Pf-Vf-8Uq"/>
+                        <constraint firstAttribute="width" secondItem="4Iy-aV-wGF" secondAttribute="height" multiplier="120:17" constant="-72.70588235294116" id="3Pf-Vf-8Uq"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="FKX-VV-bNJ"/>
-                        <constraint firstAttribute="height" constant="17" id="X69-zG-Wo7"/>
+                        <constraint firstAttribute="height" constant="29" id="X69-zG-Wo7"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Add to Pinboard" id="2Ec-kd-q2K">
                         <font key="font" metaFont="system" size="15"/>
@@ -56,7 +56,7 @@
                     </textFieldCell>
                 </textField>
                 <textField identifier="titleTextField" toolTip="Title of URL you want to save" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-a3-Zko">
-                    <rect key="frame" x="16" y="227" width="302" height="22"/>
+                    <rect key="frame" x="16" y="228" width="302" height="21"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="eKS-es-a9A">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -67,7 +67,7 @@
                     </connections>
                 </textField>
                 <textField identifier="descriptionTextField" toolTip="Description of URL you want to save" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="tH0-3P-99u">
-                    <rect key="frame" x="16" y="162" width="302" height="52"/>
+                    <rect key="frame" x="16" y="163" width="302" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="Mvc-Mc-iGD"/>
                         <constraint firstAttribute="width" secondItem="tH0-3P-99u" secondAttribute="height" multiplier="9:2" constant="68" id="QVa-hQ-m9R"/>
@@ -98,10 +98,10 @@
                     </textFieldCell>
                 </textField>
                 <button identifier="privateCheckbox" toolTip="Indicates if the URL can be shared publicly or not" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-Cp-9FM">
-                    <rect key="frame" x="14" y="69" width="64" height="18"/>
+                    <rect key="frame" x="14" y="62" width="119" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="14" id="ZcQ-BB-pyj"/>
-                        <constraint firstAttribute="width" secondItem="i5S-Cp-9FM" secondAttribute="height" multiplier="30:7" id="mVZ-Sg-tIf"/>
+                        <constraint firstAttribute="height" constant="22" id="ZcQ-BB-pyj"/>
+                        <constraint firstAttribute="width" secondItem="i5S-Cp-9FM" secondAttribute="height" multiplier="30:7" constant="22.714285714285722" id="mVZ-Sg-tIf"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="tIF-O2-gvi"/>
                     </constraints>
                     <buttonCell key="cell" type="check" title="Private" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="s6j-IN-wWM">
@@ -110,11 +110,11 @@
                     </buttonCell>
                 </button>
                 <button identifier="readLaterCheckbox" toolTip="Indicates that you want to revisit and read the content of the URL later" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-OC-yr7">
-                    <rect key="frame" x="14" y="95" width="88" height="18"/>
+                    <rect key="frame" x="14" y="90" width="119" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="14" id="BSg-XH-DKg"/>
+                        <constraint firstAttribute="height" constant="20" id="BSg-XH-DKg"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="GyW-yG-ktG"/>
-                        <constraint firstAttribute="width" secondItem="bvU-OC-yr7" secondAttribute="height" multiplier="6:1" id="g0q-ha-jO9"/>
+                        <constraint firstAttribute="width" secondItem="bvU-OC-yr7" secondAttribute="height" multiplier="6:1" constant="-3" id="g0q-ha-jO9"/>
                     </constraints>
                     <buttonCell key="cell" type="check" title="Read Later" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hmX-pK-fdk">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -122,7 +122,7 @@
                     </buttonCell>
                 </button>
                 <button identifier="addBookmarkButton" toolTip="Add the bookmark to pinboard.in" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ewh-WU-08f">
-                    <rect key="frame" x="10" y="24" width="129" height="32"/>
+                    <rect key="frame" x="9" y="24" width="131" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="1b7-zQ-xFt"/>
                         <constraint firstAttribute="height" constant="21" id="1sW-6J-WVr"/>
@@ -169,7 +169,7 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i5S-Cp-9FM" secondAttribute="trailing" constant="262" id="3GG-3i-a1g"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i5S-Cp-9FM" secondAttribute="trailing" constant="205" id="3GG-3i-a1g"/>
                 <constraint firstItem="tH0-3P-99u" firstAttribute="top" secondItem="NaV-a3-Zko" secondAttribute="bottom" constant="13" id="4Oi-dD-Z1O"/>
                 <constraint firstItem="bvU-OC-yr7" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="6qL-Fj-e8i"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="148" id="9La-IX-CeZ"/>
@@ -177,13 +177,13 @@
                 <constraint firstItem="X1s-ox-q2G" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Cyx-9V-xVv"/>
                 <constraint firstItem="cLy-B4-2Kd" firstAttribute="leading" secondItem="tH0-3P-99u" secondAttribute="leading" id="FgA-iD-P0S"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="top" secondItem="X1s-ox-q2G" secondAttribute="bottom" constant="15" id="G2Q-T3-XYK"/>
-                <constraint firstItem="ASc-sr-bO9" firstAttribute="top" secondItem="4Iy-aV-wGF" secondAttribute="bottom" constant="20" id="GDv-xz-Uwo"/>
-                <constraint firstItem="i5S-Cp-9FM" firstAttribute="top" secondItem="bvU-OC-yr7" secondAttribute="bottom" constant="12" id="LMQ-mq-4Js"/>
+                <constraint firstItem="ASc-sr-bO9" firstAttribute="top" secondItem="4Iy-aV-wGF" secondAttribute="bottom" constant="8" id="GDv-xz-Uwo"/>
+                <constraint firstItem="i5S-Cp-9FM" firstAttribute="top" secondItem="bvU-OC-yr7" secondAttribute="bottom" constant="6" id="LMQ-mq-4Js"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cLy-B4-2Kd" secondAttribute="trailing" constant="20" id="NCT-Ij-uPU"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="trailing" constant="20" id="OSZ-XY-VRz"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="leading" secondItem="X1s-ox-q2G" secondAttribute="leading" id="Oou-RV-DxI"/>
                 <constraint firstItem="ewh-WU-08f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="Rs1-1z-2vM"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bvU-OC-yr7" secondAttribute="trailing" constant="238" id="S1u-T2-dBT"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bvU-OC-yr7" secondAttribute="trailing" constant="205" id="S1u-T2-dBT"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X1s-ox-q2G" secondAttribute="trailing" constant="20" id="SQp-Pu-AYT"/>
                 <constraint firstItem="i5S-Cp-9FM" firstAttribute="leading" secondItem="ewh-WU-08f" secondAttribute="leading" id="W4X-6l-TPV"/>
                 <constraint firstItem="NaV-a3-Zko" firstAttribute="trailing" secondItem="X1s-ox-q2G" secondAttribute="trailing" id="WfB-k2-D7D"/>
@@ -192,9 +192,9 @@
                 <constraint firstAttribute="trailing" secondItem="ewh-WU-08f" secondAttribute="trailing" constant="205" id="hwX-Uf-IWv"/>
                 <constraint firstItem="X1s-ox-q2G" firstAttribute="top" secondItem="ASc-sr-bO9" secondAttribute="bottom" constant="13" id="iMM-kG-aPD"/>
                 <constraint firstAttribute="bottom" secondItem="ewh-WU-08f" secondAttribute="bottom" constant="31" id="j7c-Az-iyD"/>
-                <constraint firstItem="cLy-B4-2Kd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="bottom" constant="12" id="jBy-fI-FKe"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Iy-aV-wGF" secondAttribute="trailing" constant="202" id="jTz-d4-03p"/>
-                <constraint firstItem="ewh-WU-08f" firstAttribute="top" secondItem="i5S-Cp-9FM" secondAttribute="bottom" constant="19" id="k0V-qR-m3n"/>
+                <constraint firstItem="cLy-B4-2Kd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tH0-3P-99u" secondAttribute="bottom" constant="14" id="jBy-fI-FKe"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Iy-aV-wGF" secondAttribute="trailing" constant="190" id="jTz-d4-03p"/>
+                <constraint firstItem="ewh-WU-08f" firstAttribute="top" secondItem="i5S-Cp-9FM" secondAttribute="bottom" constant="11" id="k0V-qR-m3n"/>
                 <constraint firstItem="bvU-OC-yr7" firstAttribute="top" secondItem="cLy-B4-2Kd" secondAttribute="bottom" constant="16" id="lJD-l7-yvE"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="lNF-NR-Eyj"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="5" id="lvb-dV-Nad"/>
